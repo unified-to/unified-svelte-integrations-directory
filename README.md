@@ -28,13 +28,16 @@ import { UnifiedDirectory } from '@unified-api/svelte-directory';
 
 ## Example
 
-```js
-return (
-    <>
-        <h1>Integrations Directory</h1>
-        <UnifiedDirectory workspaceId="12345" />
-    </>
-);
+```html
+<script lang="ts">
+    import UnifiedDirectory, { type UnifiedDirectorytProps } from 'UnifiedDirectory';
+
+    let props: ComponentProps = {
+        workspaceId: '', // my workspace ID from https://app.unified.to/settings/api
+    };
+</script>
+
+<Component {...props} />
 ```
 
 The following are the `props` that can be passed to the component:
@@ -54,7 +57,5 @@ The following are the `props` that can be passed to the component:
     notabs?: boolean;       // Do not display tabs in the embedded directory
     nocategories?: boolean; // Do not display category badges for each integration
     dc?: 'us'|'eu';         // data-region
-
-
 }
 ```
