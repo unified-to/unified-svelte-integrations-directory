@@ -2923,8 +2923,14 @@ function UnifiedDirectory($$anchor, $$props) {
 	let notabs = prop($$props, "notabs", 8);
 	let nocategories = prop($$props, "nocategories", 8);
 	let dc = prop($$props, "dc", 8);
-	const API_NA_URL = 'https://api.unified.to';
-	const API_EU_URL = 'https://api-eu.unified.to';
+
+	const MAP_REGION = {
+		us: 'https://api.unified.to',
+		us_beta: 'https://api-beta.unified.to',
+		eu: 'https://api-eu.unified.to',
+		eu_beta: 'https://api-eu-beta.unified.to',
+		dev: 'https://api-dev.unified.to'
+	};
 
 	const CATEGORY_MAP = {
 		crm: 'CRM',
@@ -2941,10 +2947,13 @@ function UnifiedDirectory($$anchor, $$props) {
 		genai: 'Generative AI',
 		messaging: 'Messaging',
 		kms: 'KMS',
-		task: 'Tasks'
+		task: 'Tasks',
+		metadata: 'Metadata',
+		lms: 'LMS',
+		repo: 'Repository'
 	};
 
-	const API_URL = dc() === 'eu' ? API_EU_URL : API_NA_URL;
+	const API_URL = MAP_REGION[dc() || 'us'] || MAP_REGION['us'];
 	let INTEGRATIONS = mutable_state([]);
 	let CATEGORIES = mutable_state([]);
 	let selectedCategory = mutable_state('');

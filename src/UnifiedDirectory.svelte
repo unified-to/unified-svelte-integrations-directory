@@ -23,8 +23,13 @@
     export let nocategories: boolean | undefined;
     export let dc: 'us' | 'eu' | undefined;
 
-    const API_NA_URL = 'https://api.unified.to';
-    const API_EU_URL = 'https://api-eu.unified.to';
+    const MAP_REGION = {
+        us: 'https://api.unified.to',
+        us_beta: 'https://api-beta.unified.to',
+        eu: 'https://api-eu.unified.to',
+        eu_beta: 'https://api-eu-beta.unified.to',
+        dev: 'https://api-dev.unified.to',
+    } satisfies { [path in string]: string };
 
     const CATEGORY_MAP: { [path in string]?: string } = {
         crm: 'CRM',
@@ -42,9 +47,12 @@
         messaging: 'Messaging',
         kms: 'KMS',
         task: 'Tasks',
+        metadata: 'Metadata',
+        lms: 'LMS',
+        repo: 'Repository',
     };
 
-    const API_URL = dc === 'eu' ? API_EU_URL : API_NA_URL;
+    const API_URL = MAP_REGION[(dc as keyof typeof MAP_REGION) || 'us'] || MAP_REGION['us'];
     let INTEGRATIONS: IIntegration[] = [];
     let CATEGORIES: string[] = [];
     let selectedCategory: string | '' = '';
