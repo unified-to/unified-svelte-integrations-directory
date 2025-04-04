@@ -1,6 +1,6 @@
 {
     "name": "@unified-api/svelte-directory",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Svelte component for Unified.to's Integrations Directory",
     "author": "Unified API Inc.",
     "svelte": "src/index.js",
@@ -48,7 +48,6 @@
         "esm-env": "^1.0.0",
         "esrap": "^1.2.2",
         "estree-walker": "^2.0.2",
-        "fsevents": "^2.3.3",
         "function-bind": "^1.1.2",
         "hasown": "^2.0.2",
         "is-core-module": "^2.15.1",
