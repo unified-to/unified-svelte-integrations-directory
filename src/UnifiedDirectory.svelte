@@ -21,13 +21,14 @@
     export let lang: string | undefined;
     export let notabs: boolean | undefined;
     export let nocategories: boolean | undefined;
-    export let dc: 'us' | 'eu' | undefined;
+    export let dc: 'us' | 'eu' | 'au' | undefined;
 
     const MAP_REGION = {
         us: 'https://api.unified.to',
         us_beta: 'https://api-beta.unified.to',
         eu: 'https://api-eu.unified.to',
         eu_beta: 'https://api-eu-beta.unified.to',
+        au: 'https://api-au.unified.to',
         dev: 'https://api-dev.unified.to',
     } satisfies { [path in string]: string };
 
