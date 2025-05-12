@@ -50,6 +50,7 @@
         metadata: 'Metadata',
         lms: 'LMS',
         repo: 'Repository',
+        calendar: 'Calendar',
     };
 
     const API_URL = MAP_REGION[(dc as keyof typeof MAP_REGION) || 'us'] || MAP_REGION['us'];
