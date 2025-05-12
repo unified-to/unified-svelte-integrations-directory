@@ -2950,7 +2950,8 @@ function UnifiedDirectory($$anchor, $$props) {
 		task: 'Tasks',
 		metadata: 'Metadata',
 		lms: 'LMS',
-		repo: 'Repository'
+		repo: 'Repository',
+		calendar: 'Calendar'
 	};
 
 	const API_URL = MAP_REGION[dc() || 'us'] || MAP_REGION['us'];
