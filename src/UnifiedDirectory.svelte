@@ -1,4 +1,5 @@
 <script lang="ts">
+    import CATEGORIES from './Unified.ts';
     interface IIntegration {
         type: string;
         name: string;
@@ -32,31 +33,17 @@
         dev: 'https://api-dev.unified.to',
     } satisfies { [path in string]: string };
 
-    const CATEGORY_MAP: { [path in string]?: string } = {
-        crm: 'CRM',
-        martech: 'Marketing',
-        ticketing: 'Ticketing',
-        uc: 'Unified Communications',
-        enrich: 'Enrichment',
-        ats: 'ATS',
-        hris: 'HR',
-        accounting: 'Accounting',
-        storage: 'Storage',
-        commerce: 'E-Commerce',
-        payment: 'Payments',
-        genai: 'Generative AI',
-        messaging: 'Messaging',
-        kms: 'KMS',
-        task: 'Tasks',
-        metadata: 'Metadata',
-        lms: 'LMS',
-        repo: 'Repository',
-        calendar: 'Calendar',
-    };
+    const CATEGORY_MAP: { [path in TIntegrationCategory]?: string } = CATEGORIES.reduce(
+    (acc, category) => {
+        acc[category.category] = category.label;
+        return acc;
+    },
+    {} as { [path in TIntegrationCategory]: string }
+    );
 
     const API_URL = MAP_REGION[(dc as keyof typeof MAP_REGION) || 'us'] || MAP_REGION['us'];
     let INTEGRATIONS: IIntegration[] = [];
-    let CATEGORIES: string[] = [];
+    let ALL_CATEGORIES: string[] = [];
     let selectedCategory: string | '' = '';
     let loading = false;
 
@@ -136,7 +123,7 @@
                 } else {
                     _CATEGORIES = _CATEGORIES.sort((a, b) => a.localeCompare(b));
                 }
-                CATEGORIES = _CATEGORIES;
+                ALL_CATEGORIES = _CATEGORIES;
                 loading = false;
             });
         }
@@ -150,10 +137,10 @@
         </style>
     {/if}
 
-    {#if !notabs && CATEGORIES && CATEGORIES.length > 0 && filter(INTEGRATIONS).length}
+    {#if !notabs && ALL_CATEGORIES && ALL_CATEGORIES.length > 0 && filter(INTEGRATIONS).length}
         <div class="unified_menu">
             <button class="unified_button unified_button_all {selectedCategory ? '' : ' active'}" on:click={() => (selectedCategory = '')}> All </button>
-            {#each CATEGORIES as cat}
+            {#each ALL_CATEGORIES as cat}
                 <button class="unified_button unified_button_{cat} {selectedCategory === cat ? 'active' : ''}" on:click={() => (selectedCategory = cat)}>
                     {CATEGORY_MAP[cat]}
                 </button>
@@ -168,7 +155,7 @@
                 <div class="unified_vendor_inner">
                     <div class="unified_vendor_name">{integration.name}</div>
                     {#if !nocategories}
-                        {#each integration.categories.filter((c) => !CATEGORIES || CATEGORIES.indexOf(c) > -1).filter((c) => CATEGORY_MAP[c]) as cat}
+                        {#each integration.categories.filter((c) => !ALL_CATEGORIES || ALL_CATEGORIES.indexOf(c) > -1).filter((c) => CATEGORY_MAP[c]) as cat}
                             <div class="unified_vendor_cats">
                                 <span>{CATEGORY_MAP[cat]}</span>
                             </div>
