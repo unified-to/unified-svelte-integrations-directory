@@ -1,0 +1,1185 @@
+<svg version="1.1" baseProfile="full" width="2197.0" height="4054.0" viewbox="0 0 2197 4054" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#background: transparent
+	#edges: rounded
+	[ApiCall | 
+		id: id
+		created_at: date
+		connection_id: id
+		workspace_id: id
+		integration_type: string
+		external_xref: string
+		name: string
+		path: string
+		size: number
+		status: string
+		error: string
+		ip_address: string
+		type: ApiCallType
+		method: string
+		environment: string
+		webhook_id: id
+		is_billable: boolean
+		user_agent: string
+		unified_response_time: number
+		endapi_response_time: number
+	]
+	
+	[Connection | 
+		id: id
+		created_at: date
+		updated_at: date
+		workspace_id: id
+		integration_type: string
+		integration_name: string
+		external_xref: string
+		permissions: IntegrationPermission\[\]
+		categories: IntegrationCategory\[\]
+		auth: ConnectionAuth
+		is_paused: boolean
+		auth_aws_arn: string
+		environment: string
+		auth_azure_keyvault_id: string
+		auth_gcp_secret_name: string
+		auth_hashi_vault_path: string
+		last_healthy_at: date
+		last_unhealthy_at: date
+	]
+	
+	[ConnectionAuth | 
+		token: string
+		access_token: string
+		refresh_token: string
+		expiry_date: date
+		expires_in: number
+		emails: string\[\]
+		name: string
+		user_id: string
+		app_id: string
+		client_id: string
+		client_secret: string
+		consumer_key: string
+		consumer_secret: string
+		meta: object
+		state: string
+		other_auth_info: string\[\]
+		api_url: string
+		authorize_url: string
+		token_url: string
+		refresh_url: string
+		pem: string
+		key: string
+		refresh_token_expires_in: number
+		refresh_token_expires_date: date
+		dev_api_key: string
+	]
+	
+	[Integration | 
+		type: string
+		created_at: string
+		updated_at: string
+		name: string
+		is_active: boolean
+		categories: IntegrationCategory\[\]
+		api_docs_url: string
+		logo_url: string
+		in_progress: boolean
+		is_hidden: boolean
+		color: string
+		text_color: string
+		fa_icon: string
+		token_names: string\[\]
+		token_instructions: string\[\]
+		web_url: string
+		rate_limit_description: string
+		beta: boolean
+		support: IntegrationSupport
+		tested_at: date
+		sandbox: object
+		partnership: object
+		saml: object
+		description: string
+		api: object
+		featured: boolean
+		popularity: number
+		active_healthy_connections: number
+	]
+	
+	[IntegrationSupport | 
+		methods: boolean
+		inbound_fields: SupportInboundType
+		outbound_fields: SupportOutboundType
+		webhook_events: IntegrationSupportWebhookType\[\]
+		raw_objects: string\[\]
+		slow_fields: string\[\]
+		from_webhook: SupportInboundType
+		list_sort_by_name: SupportInboundType
+		list_sort_by_created_at: SupportInboundType
+		list_sort_by_updated_at: SupportInboundType
+		list_updated_gte: SupportInboundType
+		list_user_id: SupportInboundType
+		list_user_mentioned_id: SupportInboundType
+		list_customer_id: SupportInboundType
+		list_company_id: SupportInboundType
+		list_contact_id: SupportInboundType
+		list_application_id: SupportInboundType
+		list_candidate_id: SupportInboundType
+		list_deal_id: SupportInboundType
+		list_job_id: SupportInboundType
+		list_invoice_id: SupportInboundType
+		list_order: SupportInboundType
+		list_query: SupportInboundType
+		list_limit: SupportInboundType
+		list_offset: SupportInboundType
+		list_root_id: SupportInboundType
+		list_list_id: SupportInboundType
+		list_interview_id: SupportInboundType
+		list_location_id: SupportInboundType
+		list_collection_id: SupportInboundType
+		list_ticket_id: SupportInboundType
+		list_parent_id: SupportInboundType
+		list_account_id: SupportInboundType
+		list_item_id: SupportInboundType
+		list_space_id: SupportInboundType
+		list_channel_id: SupportInboundType
+		list_page_id: SupportInboundType
+		list_type: SupportInboundType
+		list_link_id: SupportInboundType
+		list_project_id: SupportInboundType
+		list_item_variant_id: SupportInboundType
+		list_raw_fields: SupportInboundType
+		list_student_id: SupportInboundType
+		list_class_id: SupportInboundType
+		list_instructor_id: SupportInboundType
+		list_course_id: SupportInboundType
+		list_teacher_id: SupportInboundType
+		list_repo_id: SupportInboundType
+		list_org_id: SupportInboundType
+		list_calendar_id: SupportInboundType
+		list_task_id: SupportInboundType
+		search_twitter: SupportInboundType
+		search_name: SupportInboundType
+		search_linkedinurl: SupportInboundType
+		search_email: SupportInboundType
+		search_domain: SupportInboundType
+		list_event_id: SupportInboundType
+		list_start_gte: SupportInboundType
+		list_end_lt: SupportInboundType
+		list_lead_id: SupportInboundType
+		list_call_id: SupportInboundType
+		list_document_id: SupportInboundType
+		list_payment_id: SupportInboundType
+		list_status: SupportInboundType
+		list_branch_id: SupportInboundType
+		list_pipeline_id: SupportInboundType
+		list_category_id: SupportInboundType
+		list_package_id: SupportInboundType
+		list_expand: SupportInboundType
+		native_webhook_parent_id: SupportInboundType
+		native_webhook_project_id: SupportInboundType
+		native_webhook_company_id: SupportInboundType
+		native_webhook_task_id: SupportInboundType
+		native_webhook_channel_id: SupportInboundType
+		native_webhook_calendar_id: SupportInboundType
+		native_webhook_event_id: SupportInboundType
+		virtual_webhook_updated_gte: SupportInboundType
+		virtual_webhook_limit: SupportInboundType
+		virtual_webhook_channel_id: SupportInboundType
+		virtual_webhook_parent_id: SupportInboundType
+		virtual_webhook_contact_id: SupportInboundType
+		virtual_webhook_deal_id: SupportInboundType
+		virtual_webhook_company_id: SupportInboundType
+		virtual_webhook_user_id: SupportInboundType
+		virtual_webhook_user_mentioned_id: SupportInboundType
+		virtual_webhook_type: SupportInboundType
+		virtual_webhook_ticket_id: SupportInboundType
+		virtual_webhook_expand: SupportInboundType
+		virtual_webhook_status: SupportInboundType
+		virtual_webhook_start_gte: SupportInboundType
+		virtual_webhook_end_lt: SupportInboundType
+		virtual_webhook_task_id: SupportInboundType
+		virtual_webhook_space_id: SupportInboundType
+		virtual_webhook_repo_id: SupportInboundType
+		virtual_webhook_project_id: SupportInboundType
+		virtual_webhook_pipeline_id: SupportInboundType
+		virtual_webhook_page_id: SupportInboundType
+		virtual_webhook_org_id: SupportInboundType
+		virtual_webhook_location_id: SupportInboundType
+		virtual_webhook_list_id: SupportInboundType
+		virtual_webhook_job_id: SupportInboundType
+		virtual_webhook_item_id: SupportInboundType
+		virtual_webhook_fields: SupportInboundType
+		virtual_webhook_event_id: SupportInboundType
+		virtual_webhook_customer_id: SupportInboundType
+		virtual_webhook_collection_id: SupportInboundType
+		virtual_webhook_candidate_id: SupportInboundType
+		virtual_webhook_call_id: SupportInboundType
+		virtual_webhook_branch_id: SupportInboundType
+		virtual_webhook_application_id: SupportInboundType
+		virtual_webhook_item_variant_id: SupportInboundType
+		virtual_webhook_calendar_id: SupportInboundType
+		virtual_webhook_lead_id: SupportInboundType
+		list_payslip_id: SupportInboundType
+		list_benefit_id: SupportInboundType
+		list_saleschannel_id: SupportInboundType
+		virtual_webhook_saleschannel_id: SupportInboundType
+		list_campaign_id: SupportInboundType
+		list_ad_id: SupportInboundType
+		list_group_id: SupportInboundType
+		virtual_webhook_campaign_id: SupportInboundType
+		virtual_webhook_ad_id: SupportInboundType
+		virtual_webhook_group_id: SupportInboundType
+		list_form_id: SupportInboundType
+		virtual_webhook_form_id: SupportInboundType
+		native_webhook_form_id: SupportInboundType
+		list_order_id: SupportInboundType
+		virtual_webhook_order_id: SupportInboundType
+		native_webhook_order_id: SupportInboundType
+		list_carrier_id: SupportInboundType
+		virtual_webhook_carrier_id: SupportInboundType
+		native_webhook_carrier_id: SupportInboundType
+		list_shipment_id: SupportInboundType
+		virtual_webhook_shipment_id: SupportInboundType
+		native_webhook_shipment_id: SupportInboundType
+		list_label_id: SupportInboundType
+		virtual_webhook_label_id: SupportInboundType
+		native_webhook_label_id: SupportInboundType
+		list_member_id: SupportInboundType
+		virtual_webhook_member_id: SupportInboundType
+		native_webhook_member_id: SupportInboundType
+		list_content_id: SupportInboundType
+		virtual_webhook_course_id: SupportInboundType
+		native_webhook_course_id: SupportInboundType
+		virtual_webhook_student_id: SupportInboundType
+		native_webhook_student_id: SupportInboundType
+	]
+	
+	[Invoice | 
+		stripe_id: string
+		created_at: date
+		amount: number
+		connections: number
+		plan: string
+	]
+	
+	[Issue | 
+		id: id
+		created_at: string
+		updated_at: string
+		title: string
+		status: IssueStatus
+		url: string
+		workspace_id: id
+		type: string\[\]
+		resolution_time: number
+		ticket_ref: string
+		size: number
+		importance: number
+	]
+	
+	[Notification | 
+		id: id
+		created_at: date
+		workspace_id: id
+		description: string
+		user_id: id
+		user_name: string
+		workspace_name: string
+		webhook_id: id
+		connection_id: id
+		integration_type: string
+		integration_name: string
+		sent_at: date
+		event: WorkspaceEventType
+	]
+	
+	[Permission | 
+		can_create_org: boolean
+		can_leave_org: boolean
+		can_downgrade: boolean
+		can_invite: boolean
+		can_update_org: boolean
+		can_add_and_remove_admin: boolean
+		can_accept_invite: boolean
+		can_reject_invite: boolean
+		can_pay: boolean
+		can_get_invoices: boolean
+		is_admin: boolean
+	]
+	
+	[Plan | 
+		name: string
+		description: string
+		max_connections: number
+		stripe_product_id: string
+		stripe_price_id: string
+		min_price: number
+		price_per_mille_requests: number
+		custom_oauth: boolean
+		max_requests: number
+		test_stripe_product_id: string
+		test_stripe_price_id: string
+		min_annual_price: number
+		stripe_annual_price_id: string
+		test_stripe_annual_price_id: string
+		stripe_overage_price_id: string
+		test_stripe_overage_price_id: string
+		dedicated_channel: boolean
+	]
+	
+	[User | 
+		id: id
+		created_at: date
+		updated_at: date
+		name: string
+		email: string
+		workspace_id: id
+		workspace_ids: id\[\]
+		environment: string
+		meta: object
+	]
+	
+	[Webhook | 
+		id: id
+		created_at: date
+		updated_at: date
+		workspace_id: id
+		connection_id: id
+		hook_url: string
+		object_type: ObjectType
+		interval: number
+		checked_at: date
+		integration_type: string
+		environment: string
+		event: WebhookEvent
+		runs: string\[\]
+		fields: string
+		webhook_type: IntegrationSupportWebhookType
+		meta: object
+		is_healthy: boolean
+		page_max_limit: number
+		filters: string
+		db_type: WebhookDatabaseType
+		db_url: string
+		db_schema: string
+		db_name_prefix: string
+		is_paused: boolean
+	]
+	
+	[WebhookData | 
+		data: object\[\]
+		webhook: Webhook
+		nonce: string
+		sig: string
+		sig256: string
+		type: WebhookDataType
+		external_xref: string
+	]
+	
+	[Workspace | 
+		id: id
+		created_at: date
+		updated_at: date
+		name: string
+		admin_ids: id\[\]
+		invited_emails: string\[\]
+		pay_user_id: string
+		plan: string
+		stripe_customer: string
+		stripe_subscriptions: string\[\]
+		stripe_prices: string\[\]
+		secret: string
+		integrations: WorkspaceIntegration\[\]
+		ip_addresses: string\[\]
+		aws_region: string
+		aws_key: string
+		aws_secret: string
+		datadog_apikey: string
+		datadog_site: string
+		environments: string\[\]
+		add_ons: string\[\]
+		checklist: object
+		plan_term: PlanTerm
+		stripe_canceling_at: date
+		domain: string
+		event_webhook_url: string
+		event_webhook_events: WorkspaceEventType\[\]
+		custom_auth_domain: string
+		custom_auth_domain_valid: boolean
+		custom_api_domain: string
+		slow_fields_opt_in: boolean
+		notion_verification_token: string
+		favicon_url: string
+		is_baa: boolean
+		saml_integration_type: string
+		saml_idp_url: string
+		saml_idp_entity_id: string
+		saml_pem: string
+		saml_only_login: boolean
+		azure_keyvault_url: string
+		azure_tenant_id: string
+		azure_client_id: string
+		azure_client_secret: string
+		gcp_project_id: string
+		gcp_client_email: string
+		gcp_private_key: string
+		hashicorp_vault_url: string
+		hashicorp_vault_token: string
+		hashicorp_vault_namespace: string
+		hashicorp_vault_kv_mount: string
+		hashicorp_vault_kv_version: string
+		grafana_apikey: string
+		grafana_site: string
+		clickhouse_url: string
+		clickhouse_username: string
+		clickhouse_password: string
+	]
+	
+	[WorkspaceIntegration | 
+		integration_type: string
+		client_id: string
+		client_secret: string
+		consumer_key: string
+		consumer_secret: string
+		is_active: boolean
+		api_url: string
+		authorize_url: string
+		token_url: string
+		refresh_url: string
+		base_url: string
+		pem: string
+		key: string
+		environment: string
+		categories: IntegrationCategory\[\]
+		dev_api_key: string
+		overriden_scopes: string
+	]
+	
+	[ApiCall] -&gt; [Connection]
+	[ApiCall] -&gt; [Workspace]
+	[ApiCall] -&gt; [Webhook]
+	[Connection] -&gt; [Workspace]
+	[Connection] - [ConnectionAuth]
+	[Integration] - [IntegrationSupport]
+	[Issue] -&gt; [Workspace]
+	[Notification] -&gt; [Workspace]
+	[Notification] -&gt; [User]
+	[Notification] -&gt; [Webhook]
+	[Notification] -&gt; [Connection]
+	[User] -&gt; [Workspace]
+	[User] -&gt; *[Workspace]
+	[Webhook] -&gt; [Workspace]
+	[Webhook] -&gt; [Integration]
+	[WebhookData] - [Webhook]
+	[Workspace] -&gt; *[User]
+	[Workspace] - *[WorkspaceIntegration]
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="4054.0" width="2197.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<path d="M454.2 347.0 L443.75 367 L463.6402615690649 425.68611829288443 L463.6 425.7 " fill="none"></path>
+					<path d="M456.4 421.1 L463.6 425.7 L466.6 417.7 L465.8 432.0 Z"></path>
+					<path d="M678.0 328.6 L711 367 L711 590.5 L711 590.5 L711 814 L711 814 L787.5664028417035 941.4273885713808 L787.6 941.4 " fill="none"></path>
+					<path d="M779.6 938.5 L787.6 941.4 L788.7 933.0 L791.0 947.1 Z"></path>
+					<path d="M678.0 204.8 L1368.5 367 L1491.9801662758719 450.6297489777496 L1492.0 450.6 " fill="none"></path>
+					<path d="M1483.5 451.3 L1492.0 450.6 L1489.5 442.5 L1497.5 454.4 Z"></path>
+					<path d="M671.0 680.0 L897.75 814 L900.4144577089835 827.4602304971538 L900.4 827.5 " fill="none"></path>
+					<path d="M893.9 822.0 L900.4 827.5 L904.4 819.9 L901.7 834.0 Z"></path>
+					<path d="M368.0 680.7 L144 814 L144 1066.5 L144.0 1066.5 " fill="none"></path>
+					<path d="M1855.5 1511.0 L1855.5 1741 L1855.5 1761 L1855.5 1761.0 " fill="none"></path>
+					<path d="M969.5 704.0 L969.5 814 L970.0756000462883 827.3395310727311 L970.1 827.3 " fill="none"></path>
+					<path d="M964.5 820.9 L970.1 827.3 L975.1 820.4 L970.4 834.0 Z"></path>
+					<path d="M1165.6 294.5 L1228 367 L1228 590.5 L1228 590.5 L1228 814 L1228 814 L1191.0502870909704 885.807932634529 L1191.1 885.8 " fill="none"></path>
+					<path d="M1189.4 877.4 L1191.1 885.8 L1198.8 882.3 L1188.0 891.7 Z"></path>
+					<path d="M940.0 205.6 L328 367 L328 590.5 L328 590.5 L328 814 L328 814 L328 1277.5 L328 1277.5 L328 1741 L328 1741 L757.8891141960818 2782.3377798132747 L757.9 2782.3 " fill="none"></path>
+					<path d="M750.4 2778.2 L757.9 2782.3 L760.3 2774.1 L760.4 2788.5 Z"></path>
+					<path d="M1183.0 233.8 L1451.5 367 L1492.556665213776 404.1504642723843 L1492.6 404.2 " fill="none"></path>
+					<path d="M1484.0 403.6 L1492.6 404.2 L1491.2 395.7 L1497.5 408.6 Z"></path>
+					<path d="M940.0 223.9 L595.25 367 L575.3597384309352 425.68611829288443 L575.4 425.7 " fill="none"></path>
+					<path d="M572.4 417.7 L575.4 425.7 L582.6 421.1 L573.2 432.0 Z"></path>
+					<path d="M778.9 2788.5 L559.5 1741 L786.4658842545306 1496.351889879128 L786.5 1496.4 " fill="none"></path>
+					<path d="M785.8 1504.9 L786.5 1496.4 L778.0 1497.6 L791.0 1491.5 Z"></path>
+					<text x="1159.4" y="1741.0" stroke="none">*</text>
+					<path d="M826.8 2788.5 L1158.75 1741 L1153.7335638937652 1727.262226675097 L1153.7 1727.3 " fill="none"></path>
+					<path d="M1161.0 1731.7 L1153.7 1727.3 L1151.0 1735.4 L1151.4 1721.0 Z"></path>
+					<path d="M1497.5 726.6 L1368.5 814 L1192.220069217135 1029.582448332079 L1192.2 1029.6 " fill="none"></path>
+					<path d="M1192.3 1021.0 L1192.2 1029.6 L1200.6 1027.8 L1188.0 1034.7 Z"></path>
+					<path d="M1841.5 794.0 L1855.5 814 L1855.5 1037.3333333333333 L1855.5 1037.3 " fill="none"></path>
+					<path d="M1850.2 1030.7 L1855.5 1037.3 L1860.8 1030.7 L1855.5 1044.0 Z"></path>
+					<path d="M2035.5 249.5 L2035.5 367 L1899.5 457.1958456973294 L1899.5 457.2 " fill="none"></path>
+					<text x="760.7" y="2780.5" stroke="none">*</text>
+					<path d="M791.0 1473.3 L519.5 1741 L774.1554755795737 2782.024269110753 L774.2 2782.0 " fill="none"></path>
+					<path d="M767.4 2776.8 L774.2 2782.0 L777.8 2774.3 L775.7 2788.5 Z"></path>
+					<text x="1317.8" y="2720.5" stroke="none">*</text>
+					<path d="M1188.0 1564.8 L1309.75 1741 L1309.75 2728.5 L1309.8 2728.5 " fill="none"></path>
+					<g data-name="ApiCall">
+						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
+							<rect x="411.0" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
+							<path d="M411.0 31.0 L678.0 31.0" fill="none" data-name="ApiCall"></path>
+						</g>
+						<g transform="translate(411, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ApiCall">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ApiCall">
+								<text x="125.5" y="13.5" stroke="none" text-anchor="middle" data-name="ApiCall">ApiCall</text>
+								
+							</g>
+						</g>
+						<g transform="translate(411, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ApiCall">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ApiCall">
+								<text x="0.0" y="13.5" stroke="none" data-name="ApiCall">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="ApiCall">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="ApiCall">connection_id: id</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="ApiCall">workspace_id: id</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="ApiCall">integration_type: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="ApiCall">external_xref: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="ApiCall">name: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="ApiCall">path: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="ApiCall">size: number</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="ApiCall">status: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="ApiCall">error: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="ApiCall">ip_address: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="ApiCall">type: ApiCallType</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="ApiCall">method: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="ApiCall">environment: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="ApiCall">webhook_id: id</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="ApiCall">is_billable: boolean</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="ApiCall">user_agent: string</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="ApiCall">unified_response_time: number</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="ApiCall">endapi_response_time: number</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Connection">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Connection">
+							<rect x="368.0" y="432.0" height="317.0" width="303.0" data-name="Connection"></rect>
+							<path d="M368.0 463.0 L671.0 463.0" fill="none" data-name="Connection"></path>
+						</g>
+						<g transform="translate(368, 432)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Connection">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Connection">
+								<text x="143.5" y="13.5" stroke="none" text-anchor="middle" data-name="Connection">Connection</text>
+								
+							</g>
+						</g>
+						<g transform="translate(368, 463)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Connection">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Connection">
+								<text x="0.0" y="13.5" stroke="none" data-name="Connection">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Connection">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Connection">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Connection">workspace_id: id</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Connection">integration_type: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Connection">integration_name: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Connection">external_xref: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Connection">permissions: IntegrationPermission[]</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Connection">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Connection">auth: ConnectionAuth</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Connection">is_paused: boolean</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Connection">auth_aws_arn: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Connection">environment: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Connection">auth_azure_keyvault_id: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Connection">auth_gcp_secret_name: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Connection">auth_hashi_vault_path: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Connection">last_healthy_at: date</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Connection">last_unhealthy_at: date</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="ConnectionAuth">
+						<g fill="#eee8d5" stroke="#33322E" data-name="ConnectionAuth">
+							<rect x="0.0" y="1066.5" height="422.0" width="288.0" data-name="ConnectionAuth"></rect>
+							<path d="M0.0 1097.5 L288.0 1097.5" fill="none" data-name="ConnectionAuth"></path>
+						</g>
+						<g transform="translate(0, 1066.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConnectionAuth">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConnectionAuth">
+								<text x="136.0" y="13.5" stroke="none" text-anchor="middle" data-name="ConnectionAuth">ConnectionAuth</text>
+								
+							</g>
+						</g>
+						<g transform="translate(0, 1097.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConnectionAuth">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConnectionAuth">
+								<text x="0.0" y="13.5" stroke="none" data-name="ConnectionAuth">token: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="ConnectionAuth">access_token: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="ConnectionAuth">refresh_token: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="ConnectionAuth">expiry_date: date</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="ConnectionAuth">expires_in: number</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="ConnectionAuth">emails: string[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="ConnectionAuth">name: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="ConnectionAuth">user_id: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="ConnectionAuth">app_id: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="ConnectionAuth">client_id: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="ConnectionAuth">client_secret: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="ConnectionAuth">consumer_key: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="ConnectionAuth">consumer_secret: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="ConnectionAuth">meta: object</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="ConnectionAuth">state: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="ConnectionAuth">other_auth_info: string[]</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="ConnectionAuth">api_url: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="ConnectionAuth">authorize_url: string</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="ConnectionAuth">token_url: string</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="ConnectionAuth">refresh_url: string</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="ConnectionAuth">pem: string</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="ConnectionAuth">key: string</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="ConnectionAuth">refresh_token_expires_in: number</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="ConnectionAuth">refresh_token_expires_date: date</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="ConnectionAuth">dev_api_key: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Integration">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Integration">
+							<rect x="1702.0" y="1044.0" height="467.0" width="307.0" data-name="Integration"></rect>
+							<path d="M1702.0 1075.0 L2009.0 1075.0" fill="none" data-name="Integration"></path>
+						</g>
+						<g transform="translate(1702, 1044)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Integration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Integration">
+								<text x="145.5" y="13.5" stroke="none" text-anchor="middle" data-name="Integration">Integration</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1702, 1075)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Integration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Integration">
+								<text x="0.0" y="13.5" stroke="none" data-name="Integration">type: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Integration">created_at: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Integration">updated_at: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Integration">name: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Integration">is_active: boolean</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Integration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Integration">api_docs_url: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Integration">logo_url: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Integration">in_progress: boolean</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Integration">is_hidden: boolean</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Integration">color: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Integration">text_color: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Integration">fa_icon: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Integration">token_names: string[]</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Integration">token_instructions: string[]</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Integration">web_url: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Integration">rate_limit_description: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Integration">beta: boolean</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Integration">support: IntegrationSupport</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Integration">tested_at: date</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Integration">sandbox: object</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Integration">partnership: object</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Integration">saml: object</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Integration">description: string</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="Integration">api: object</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="Integration">featured: boolean</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="Integration">popularity: number</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="Integration">active_healthy_connections: number</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="IntegrationSupport">
+						<g fill="#eee8d5" stroke="#33322E" data-name="IntegrationSupport">
+							<rect x="1614.0" y="1761.0" height="2237.0" width="483.0" data-name="IntegrationSupport"></rect>
+							<path d="M1614.0 1792.0 L2097.0 1792.0" fill="none" data-name="IntegrationSupport"></path>
+						</g>
+						<g transform="translate(1614, 1761)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IntegrationSupport">
+								<text x="233.5" y="13.5" stroke="none" text-anchor="middle" data-name="IntegrationSupport">IntegrationSupport</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1614, 1792)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IntegrationSupport">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IntegrationSupport">
+								<text x="0.0" y="13.5" stroke="none" data-name="IntegrationSupport">methods: boolean</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="IntegrationSupport">inbound_fields: SupportInboundType</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="IntegrationSupport">outbound_fields: SupportOutboundType</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="IntegrationSupport">webhook_events: IntegrationSupportWebhookType[]</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="IntegrationSupport">raw_objects: string[]</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="IntegrationSupport">slow_fields: string[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="IntegrationSupport">from_webhook: SupportInboundType</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="IntegrationSupport">list_sort_by_name: SupportInboundType</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="IntegrationSupport">list_sort_by_created_at: SupportInboundType</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="IntegrationSupport">list_sort_by_updated_at: SupportInboundType</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="IntegrationSupport">list_updated_gte: SupportInboundType</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="IntegrationSupport">list_user_id: SupportInboundType</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="IntegrationSupport">list_user_mentioned_id: SupportInboundType</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="IntegrationSupport">list_customer_id: SupportInboundType</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="IntegrationSupport">list_company_id: SupportInboundType</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="IntegrationSupport">list_contact_id: SupportInboundType</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="IntegrationSupport">list_application_id: SupportInboundType</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="IntegrationSupport">list_candidate_id: SupportInboundType</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="IntegrationSupport">list_deal_id: SupportInboundType</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="IntegrationSupport">list_job_id: SupportInboundType</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="IntegrationSupport">list_invoice_id: SupportInboundType</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="IntegrationSupport">list_order: SupportInboundType</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="IntegrationSupport">list_query: SupportInboundType</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="IntegrationSupport">list_limit: SupportInboundType</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="IntegrationSupport">list_offset: SupportInboundType</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="IntegrationSupport">list_root_id: SupportInboundType</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="IntegrationSupport">list_list_id: SupportInboundType</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="IntegrationSupport">list_interview_id: SupportInboundType</text>
+								<text x="0.0" y="433.5" stroke="none" data-name="IntegrationSupport">list_location_id: SupportInboundType</text>
+								<text x="0.0" y="448.5" stroke="none" data-name="IntegrationSupport">list_collection_id: SupportInboundType</text>
+								<text x="0.0" y="463.5" stroke="none" data-name="IntegrationSupport">list_ticket_id: SupportInboundType</text>
+								<text x="0.0" y="478.5" stroke="none" data-name="IntegrationSupport">list_parent_id: SupportInboundType</text>
+								<text x="0.0" y="493.5" stroke="none" data-name="IntegrationSupport">list_account_id: SupportInboundType</text>
+								<text x="0.0" y="508.5" stroke="none" data-name="IntegrationSupport">list_item_id: SupportInboundType</text>
+								<text x="0.0" y="523.5" stroke="none" data-name="IntegrationSupport">list_space_id: SupportInboundType</text>
+								<text x="0.0" y="538.5" stroke="none" data-name="IntegrationSupport">list_channel_id: SupportInboundType</text>
+								<text x="0.0" y="553.5" stroke="none" data-name="IntegrationSupport">list_page_id: SupportInboundType</text>
+								<text x="0.0" y="568.5" stroke="none" data-name="IntegrationSupport">list_type: SupportInboundType</text>
+								<text x="0.0" y="583.5" stroke="none" data-name="IntegrationSupport">list_link_id: SupportInboundType</text>
+								<text x="0.0" y="598.5" stroke="none" data-name="IntegrationSupport">list_project_id: SupportInboundType</text>
+								<text x="0.0" y="613.5" stroke="none" data-name="IntegrationSupport">list_item_variant_id: SupportInboundType</text>
+								<text x="0.0" y="628.5" stroke="none" data-name="IntegrationSupport">list_raw_fields: SupportInboundType</text>
+								<text x="0.0" y="643.5" stroke="none" data-name="IntegrationSupport">list_student_id: SupportInboundType</text>
+								<text x="0.0" y="658.5" stroke="none" data-name="IntegrationSupport">list_class_id: SupportInboundType</text>
+								<text x="0.0" y="673.5" stroke="none" data-name="IntegrationSupport">list_instructor_id: SupportInboundType</text>
+								<text x="0.0" y="688.5" stroke="none" data-name="IntegrationSupport">list_course_id: SupportInboundType</text>
+								<text x="0.0" y="703.5" stroke="none" data-name="IntegrationSupport">list_teacher_id: SupportInboundType</text>
+								<text x="0.0" y="718.5" stroke="none" data-name="IntegrationSupport">list_repo_id: SupportInboundType</text>
+								<text x="0.0" y="733.5" stroke="none" data-name="IntegrationSupport">list_org_id: SupportInboundType</text>
+								<text x="0.0" y="748.5" stroke="none" data-name="IntegrationSupport">list_calendar_id: SupportInboundType</text>
+								<text x="0.0" y="763.5" stroke="none" data-name="IntegrationSupport">list_task_id: SupportInboundType</text>
+								<text x="0.0" y="778.5" stroke="none" data-name="IntegrationSupport">search_twitter: SupportInboundType</text>
+								<text x="0.0" y="793.5" stroke="none" data-name="IntegrationSupport">search_name: SupportInboundType</text>
+								<text x="0.0" y="808.5" stroke="none" data-name="IntegrationSupport">search_linkedinurl: SupportInboundType</text>
+								<text x="0.0" y="823.5" stroke="none" data-name="IntegrationSupport">search_email: SupportInboundType</text>
+								<text x="0.0" y="838.5" stroke="none" data-name="IntegrationSupport">search_domain: SupportInboundType</text>
+								<text x="0.0" y="853.5" stroke="none" data-name="IntegrationSupport">list_event_id: SupportInboundType</text>
+								<text x="0.0" y="868.5" stroke="none" data-name="IntegrationSupport">list_start_gte: SupportInboundType</text>
+								<text x="0.0" y="883.5" stroke="none" data-name="IntegrationSupport">list_end_lt: SupportInboundType</text>
+								<text x="0.0" y="898.5" stroke="none" data-name="IntegrationSupport">list_lead_id: SupportInboundType</text>
+								<text x="0.0" y="913.5" stroke="none" data-name="IntegrationSupport">list_call_id: SupportInboundType</text>
+								<text x="0.0" y="928.5" stroke="none" data-name="IntegrationSupport">list_document_id: SupportInboundType</text>
+								<text x="0.0" y="943.5" stroke="none" data-name="IntegrationSupport">list_payment_id: SupportInboundType</text>
+								<text x="0.0" y="958.5" stroke="none" data-name="IntegrationSupport">list_status: SupportInboundType</text>
+								<text x="0.0" y="973.5" stroke="none" data-name="IntegrationSupport">list_branch_id: SupportInboundType</text>
+								<text x="0.0" y="988.5" stroke="none" data-name="IntegrationSupport">list_pipeline_id: SupportInboundType</text>
+								<text x="0.0" y="1003.5" stroke="none" data-name="IntegrationSupport">list_category_id: SupportInboundType</text>
+								<text x="0.0" y="1018.5" stroke="none" data-name="IntegrationSupport">list_package_id: SupportInboundType</text>
+								<text x="0.0" y="1033.5" stroke="none" data-name="IntegrationSupport">list_expand: SupportInboundType</text>
+								<text x="0.0" y="1048.5" stroke="none" data-name="IntegrationSupport">native_webhook_parent_id: SupportInboundType</text>
+								<text x="0.0" y="1063.5" stroke="none" data-name="IntegrationSupport">native_webhook_project_id: SupportInboundType</text>
+								<text x="0.0" y="1078.5" stroke="none" data-name="IntegrationSupport">native_webhook_company_id: SupportInboundType</text>
+								<text x="0.0" y="1093.5" stroke="none" data-name="IntegrationSupport">native_webhook_task_id: SupportInboundType</text>
+								<text x="0.0" y="1108.5" stroke="none" data-name="IntegrationSupport">native_webhook_channel_id: SupportInboundType</text>
+								<text x="0.0" y="1123.5" stroke="none" data-name="IntegrationSupport">native_webhook_calendar_id: SupportInboundType</text>
+								<text x="0.0" y="1138.5" stroke="none" data-name="IntegrationSupport">native_webhook_event_id: SupportInboundType</text>
+								<text x="0.0" y="1153.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_updated_gte: SupportInboundType</text>
+								<text x="0.0" y="1168.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_limit: SupportInboundType</text>
+								<text x="0.0" y="1183.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_channel_id: SupportInboundType</text>
+								<text x="0.0" y="1198.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_parent_id: SupportInboundType</text>
+								<text x="0.0" y="1213.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_contact_id: SupportInboundType</text>
+								<text x="0.0" y="1228.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_deal_id: SupportInboundType</text>
+								<text x="0.0" y="1243.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_company_id: SupportInboundType</text>
+								<text x="0.0" y="1258.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_user_id: SupportInboundType</text>
+								<text x="0.0" y="1273.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_user_mentioned_id: SupportInboundType</text>
+								<text x="0.0" y="1288.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_type: SupportInboundType</text>
+								<text x="0.0" y="1303.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_ticket_id: SupportInboundType</text>
+								<text x="0.0" y="1318.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_expand: SupportInboundType</text>
+								<text x="0.0" y="1333.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_status: SupportInboundType</text>
+								<text x="0.0" y="1348.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_start_gte: SupportInboundType</text>
+								<text x="0.0" y="1363.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_end_lt: SupportInboundType</text>
+								<text x="0.0" y="1378.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_task_id: SupportInboundType</text>
+								<text x="0.0" y="1393.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_space_id: SupportInboundType</text>
+								<text x="0.0" y="1408.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_repo_id: SupportInboundType</text>
+								<text x="0.0" y="1423.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_project_id: SupportInboundType</text>
+								<text x="0.0" y="1438.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_pipeline_id: SupportInboundType</text>
+								<text x="0.0" y="1453.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_page_id: SupportInboundType</text>
+								<text x="0.0" y="1468.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_org_id: SupportInboundType</text>
+								<text x="0.0" y="1483.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_location_id: SupportInboundType</text>
+								<text x="0.0" y="1498.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_list_id: SupportInboundType</text>
+								<text x="0.0" y="1513.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_job_id: SupportInboundType</text>
+								<text x="0.0" y="1528.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_item_id: SupportInboundType</text>
+								<text x="0.0" y="1543.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_fields: SupportInboundType</text>
+								<text x="0.0" y="1558.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_event_id: SupportInboundType</text>
+								<text x="0.0" y="1573.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_customer_id: SupportInboundType</text>
+								<text x="0.0" y="1588.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_collection_id: SupportInboundType</text>
+								<text x="0.0" y="1603.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_candidate_id: SupportInboundType</text>
+								<text x="0.0" y="1618.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_call_id: SupportInboundType</text>
+								<text x="0.0" y="1633.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_branch_id: SupportInboundType</text>
+								<text x="0.0" y="1648.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_application_id: SupportInboundType</text>
+								<text x="0.0" y="1663.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_item_variant_id: SupportInboundType</text>
+								<text x="0.0" y="1678.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_calendar_id: SupportInboundType</text>
+								<text x="0.0" y="1693.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_lead_id: SupportInboundType</text>
+								<text x="0.0" y="1708.5" stroke="none" data-name="IntegrationSupport">list_payslip_id: SupportInboundType</text>
+								<text x="0.0" y="1723.5" stroke="none" data-name="IntegrationSupport">list_benefit_id: SupportInboundType</text>
+								<text x="0.0" y="1738.5" stroke="none" data-name="IntegrationSupport">list_saleschannel_id: SupportInboundType</text>
+								<text x="0.0" y="1753.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_saleschannel_id: SupportInboundType</text>
+								<text x="0.0" y="1768.5" stroke="none" data-name="IntegrationSupport">list_campaign_id: SupportInboundType</text>
+								<text x="0.0" y="1783.5" stroke="none" data-name="IntegrationSupport">list_ad_id: SupportInboundType</text>
+								<text x="0.0" y="1798.5" stroke="none" data-name="IntegrationSupport">list_group_id: SupportInboundType</text>
+								<text x="0.0" y="1813.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_campaign_id: SupportInboundType</text>
+								<text x="0.0" y="1828.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_ad_id: SupportInboundType</text>
+								<text x="0.0" y="1843.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_group_id: SupportInboundType</text>
+								<text x="0.0" y="1858.5" stroke="none" data-name="IntegrationSupport">list_form_id: SupportInboundType</text>
+								<text x="0.0" y="1873.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_form_id: SupportInboundType</text>
+								<text x="0.0" y="1888.5" stroke="none" data-name="IntegrationSupport">native_webhook_form_id: SupportInboundType</text>
+								<text x="0.0" y="1903.5" stroke="none" data-name="IntegrationSupport">list_order_id: SupportInboundType</text>
+								<text x="0.0" y="1918.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_order_id: SupportInboundType</text>
+								<text x="0.0" y="1933.5" stroke="none" data-name="IntegrationSupport">native_webhook_order_id: SupportInboundType</text>
+								<text x="0.0" y="1948.5" stroke="none" data-name="IntegrationSupport">list_carrier_id: SupportInboundType</text>
+								<text x="0.0" y="1963.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_carrier_id: SupportInboundType</text>
+								<text x="0.0" y="1978.5" stroke="none" data-name="IntegrationSupport">native_webhook_carrier_id: SupportInboundType</text>
+								<text x="0.0" y="1993.5" stroke="none" data-name="IntegrationSupport">list_shipment_id: SupportInboundType</text>
+								<text x="0.0" y="2008.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_shipment_id: SupportInboundType</text>
+								<text x="0.0" y="2023.5" stroke="none" data-name="IntegrationSupport">native_webhook_shipment_id: SupportInboundType</text>
+								<text x="0.0" y="2038.5" stroke="none" data-name="IntegrationSupport">list_label_id: SupportInboundType</text>
+								<text x="0.0" y="2053.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_label_id: SupportInboundType</text>
+								<text x="0.0" y="2068.5" stroke="none" data-name="IntegrationSupport">native_webhook_label_id: SupportInboundType</text>
+								<text x="0.0" y="2083.5" stroke="none" data-name="IntegrationSupport">list_member_id: SupportInboundType</text>
+								<text x="0.0" y="2098.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_member_id: SupportInboundType</text>
+								<text x="0.0" y="2113.5" stroke="none" data-name="IntegrationSupport">native_webhook_member_id: SupportInboundType</text>
+								<text x="0.0" y="2128.5" stroke="none" data-name="IntegrationSupport">list_content_id: SupportInboundType</text>
+								<text x="0.0" y="2143.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_course_id: SupportInboundType</text>
+								<text x="0.0" y="2158.5" stroke="none" data-name="IntegrationSupport">native_webhook_course_id: SupportInboundType</text>
+								<text x="0.0" y="2173.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_student_id: SupportInboundType</text>
+								<text x="0.0" y="2188.5" stroke="none" data-name="IntegrationSupport">native_webhook_student_id: SupportInboundType</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Invoice">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Invoice">
+							<rect x="718.0" y="112.5" height="122.0" width="182.0" data-name="Invoice"></rect>
+							<path d="M718.0 143.5 L900.0 143.5" fill="none" data-name="Invoice"></path>
+						</g>
+						<g transform="translate(718, 112.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Invoice">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Invoice">
+								<text x="83.0" y="13.5" stroke="none" text-anchor="middle" data-name="Invoice">Invoice</text>
+								
+							</g>
+						</g>
+						<g transform="translate(718, 143.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Invoice">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Invoice">
+								<text x="0.0" y="13.5" stroke="none" data-name="Invoice">stripe_id: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Invoice">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Invoice">amount: number</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Invoice">connections: number</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Invoice">plan: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Issue">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Issue">
+							<rect x="866.0" y="477.0" height="227.0" width="207.0" data-name="Issue"></rect>
+							<path d="M866.0 508.0 L1073.0 508.0" fill="none" data-name="Issue"></path>
+						</g>
+						<g transform="translate(866, 477)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Issue">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Issue">
+								<text x="95.5" y="13.5" stroke="none" text-anchor="middle" data-name="Issue">Issue</text>
+								
+							</g>
+						</g>
+						<g transform="translate(866, 508)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Issue">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Issue">
+								<text x="0.0" y="13.5" stroke="none" data-name="Issue">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Issue">created_at: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Issue">updated_at: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Issue">title: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Issue">status: IssueStatus</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Issue">url: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Issue">workspace_id: id</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Issue">type: string[]</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Issue">resolution_time: number</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Issue">ticket_ref: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Issue">size: number</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Issue">importance: number</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Notification">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Notification">
+							<rect x="940.0" y="52.5" height="242.0" width="243.0" data-name="Notification"></rect>
+							<path d="M940.0 83.5 L1183.0 83.5" fill="none" data-name="Notification"></path>
+						</g>
+						<g transform="translate(940, 52.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Notification">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Notification">
+								<text x="113.5" y="13.5" stroke="none" text-anchor="middle" data-name="Notification">Notification</text>
+								
+							</g>
+						</g>
+						<g transform="translate(940, 83.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Notification">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Notification">
+								<text x="0.0" y="13.5" stroke="none" data-name="Notification">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Notification">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Notification">workspace_id: id</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Notification">description: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Notification">user_id: id</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Notification">user_name: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Notification">workspace_name: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Notification">webhook_id: id</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Notification">connection_id: id</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Notification">integration_type: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Notification">integration_name: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Notification">sent_at: date</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Notification">event: WorkspaceEventType</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Permission">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Permission">
+							<rect x="1223.0" y="67.5" height="212.0" width="326.0" data-name="Permission"></rect>
+							<path d="M1223.0 98.5 L1549.0 98.5" fill="none" data-name="Permission"></path>
+						</g>
+						<g transform="translate(1223, 67.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Permission">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Permission">
+								<text x="155.0" y="13.5" stroke="none" text-anchor="middle" data-name="Permission">Permission</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1223, 98.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Permission">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Permission">
+								<text x="0.0" y="13.5" stroke="none" data-name="Permission">can_create_org: boolean</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Permission">can_leave_org: boolean</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Permission">can_downgrade: boolean</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Permission">can_invite: boolean</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Permission">can_update_org: boolean</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Permission">can_add_and_remove_admin: boolean</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Permission">can_accept_invite: boolean</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Permission">can_reject_invite: boolean</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Permission">can_pay: boolean</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Permission">can_get_invoices: boolean</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Permission">is_admin: boolean</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Plan">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Plan">
+							<rect x="1589.0" y="22.5" height="302.0" width="301.0" data-name="Plan"></rect>
+							<path d="M1589.0 53.5 L1890.0 53.5" fill="none" data-name="Plan"></path>
+						</g>
+						<g transform="translate(1589, 22.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Plan">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Plan">
+								<text x="142.5" y="13.5" stroke="none" text-anchor="middle" data-name="Plan">Plan</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1589, 53.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Plan">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Plan">
+								<text x="0.0" y="13.5" stroke="none" data-name="Plan">name: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Plan">description: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Plan">max_connections: number</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Plan">stripe_product_id: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Plan">stripe_price_id: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Plan">min_price: number</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Plan">price_per_mille_requests: number</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Plan">custom_oauth: boolean</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Plan">max_requests: number</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Plan">test_stripe_product_id: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Plan">test_stripe_price_id: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Plan">min_annual_price: number</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Plan">stripe_annual_price_id: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Plan">test_stripe_annual_price_id: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Plan">stripe_overage_price_id: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Plan">test_stripe_overage_price_id: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Plan">dedicated_channel: boolean</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="User">
+						<g fill="#eee8d5" stroke="#33322E" data-name="User">
+							<rect x="714.0" y="2788.5" height="182.0" width="168.0" data-name="User"></rect>
+							<path d="M714.0 2819.5 L882.0 2819.5" fill="none" data-name="User"></path>
+						</g>
+						<g transform="translate(714, 2788.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User">
+								<text x="76.0" y="13.5" stroke="none" text-anchor="middle" data-name="User">User</text>
+								
+							</g>
+						</g>
+						<g transform="translate(714, 2819.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="User">
+								<text x="0.0" y="13.5" stroke="none" data-name="User">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="User">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="User">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="User">name: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="User">email: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="User">workspace_id: id</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="User">workspace_ids: id[]</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="User">environment: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="User">meta: object</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Webhook">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Webhook">
+							<rect x="1497.5" y="387.0" height="407.0" width="402.0" data-name="Webhook"></rect>
+							<path d="M1497.5 418.0 L1899.5 418.0" fill="none" data-name="Webhook"></path>
+						</g>
+						<g transform="translate(1497.5, 387)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Webhook">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Webhook">
+								<text x="193.0" y="13.5" stroke="none" text-anchor="middle" data-name="Webhook">Webhook</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1497.5, 418)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Webhook">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Webhook">
+								<text x="0.0" y="13.5" stroke="none" data-name="Webhook">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Webhook">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Webhook">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Webhook">workspace_id: id</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Webhook">connection_id: id</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Webhook">hook_url: string</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Webhook">object_type: ObjectType</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Webhook">interval: number</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Webhook">checked_at: date</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Webhook">integration_type: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Webhook">environment: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Webhook">event: WebhookEvent</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Webhook">runs: string[]</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Webhook">fields: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Webhook">webhook_type: IntegrationSupportWebhookType</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Webhook">meta: object</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Webhook">is_healthy: boolean</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Webhook">page_max_limit: number</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Webhook">filters: string</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Webhook">db_type: WebhookDatabaseType</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Webhook">db_url: string</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Webhook">db_schema: string</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Webhook">db_name_prefix: string</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Webhook">is_paused: boolean</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="WebhookData">
+						<g fill="#eee8d5" stroke="#33322E" data-name="WebhookData">
+							<rect x="1930.0" y="97.5" height="152.0" width="211.0" data-name="WebhookData"></rect>
+							<path d="M1930.0 128.5 L2141.0 128.5" fill="none" data-name="WebhookData"></path>
+						</g>
+						<g transform="translate(1930, 97.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WebhookData">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebhookData">
+								<text x="97.5" y="13.5" stroke="none" text-anchor="middle" data-name="WebhookData">WebhookData</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1930, 128.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WebhookData">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WebhookData">
+								<text x="0.0" y="13.5" stroke="none" data-name="WebhookData">data: object[]</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="WebhookData">webhook: Webhook</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="WebhookData">nonce: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="WebhookData">sig: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="WebhookData">sig256: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="WebhookData">type: WebhookDataType</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="WebhookData">external_xref: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Workspace">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Workspace">
+							<rect x="791.0" y="834.0" height="887.0" width="397.0" data-name="Workspace"></rect>
+							<path d="M791.0 865.0 L1188.0 865.0" fill="none" data-name="Workspace"></path>
+						</g>
+						<g transform="translate(791, 834)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Workspace">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Workspace">
+								<text x="190.5" y="13.5" stroke="none" text-anchor="middle" data-name="Workspace">Workspace</text>
+								
+							</g>
+						</g>
+						<g transform="translate(791, 865)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Workspace">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Workspace">
+								<text x="0.0" y="13.5" stroke="none" data-name="Workspace">id: id</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Workspace">created_at: date</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Workspace">updated_at: date</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Workspace">name: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Workspace">admin_ids: id[]</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Workspace">invited_emails: string[]</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="Workspace">pay_user_id: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="Workspace">plan: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="Workspace">stripe_customer: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="Workspace">stripe_subscriptions: string[]</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="Workspace">stripe_prices: string[]</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="Workspace">secret: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="Workspace">integrations: WorkspaceIntegration[]</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="Workspace">ip_addresses: string[]</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="Workspace">aws_region: string</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="Workspace">aws_key: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="Workspace">aws_secret: string</text>
+								<text x="0.0" y="268.5" stroke="none" data-name="Workspace">datadog_apikey: string</text>
+								<text x="0.0" y="283.5" stroke="none" data-name="Workspace">datadog_site: string</text>
+								<text x="0.0" y="298.5" stroke="none" data-name="Workspace">environments: string[]</text>
+								<text x="0.0" y="313.5" stroke="none" data-name="Workspace">add_ons: string[]</text>
+								<text x="0.0" y="328.5" stroke="none" data-name="Workspace">checklist: object</text>
+								<text x="0.0" y="343.5" stroke="none" data-name="Workspace">plan_term: PlanTerm</text>
+								<text x="0.0" y="358.5" stroke="none" data-name="Workspace">stripe_canceling_at: date</text>
+								<text x="0.0" y="373.5" stroke="none" data-name="Workspace">domain: string</text>
+								<text x="0.0" y="388.5" stroke="none" data-name="Workspace">event_webhook_url: string</text>
+								<text x="0.0" y="403.5" stroke="none" data-name="Workspace">event_webhook_events: WorkspaceEventType[]</text>
+								<text x="0.0" y="418.5" stroke="none" data-name="Workspace">custom_auth_domain: string</text>
+								<text x="0.0" y="433.5" stroke="none" data-name="Workspace">custom_auth_domain_valid: boolean</text>
+								<text x="0.0" y="448.5" stroke="none" data-name="Workspace">custom_api_domain: string</text>
+								<text x="0.0" y="463.5" stroke="none" data-name="Workspace">slow_fields_opt_in: boolean</text>
+								<text x="0.0" y="478.5" stroke="none" data-name="Workspace">notion_verification_token: string</text>
+								<text x="0.0" y="493.5" stroke="none" data-name="Workspace">favicon_url: string</text>
+								<text x="0.0" y="508.5" stroke="none" data-name="Workspace">is_baa: boolean</text>
+								<text x="0.0" y="523.5" stroke="none" data-name="Workspace">saml_integration_type: string</text>
+								<text x="0.0" y="538.5" stroke="none" data-name="Workspace">saml_idp_url: string</text>
+								<text x="0.0" y="553.5" stroke="none" data-name="Workspace">saml_idp_entity_id: string</text>
+								<text x="0.0" y="568.5" stroke="none" data-name="Workspace">saml_pem: string</text>
+								<text x="0.0" y="583.5" stroke="none" data-name="Workspace">saml_only_login: boolean</text>
+								<text x="0.0" y="598.5" stroke="none" data-name="Workspace">azure_keyvault_url: string</text>
+								<text x="0.0" y="613.5" stroke="none" data-name="Workspace">azure_tenant_id: string</text>
+								<text x="0.0" y="628.5" stroke="none" data-name="Workspace">azure_client_id: string</text>
+								<text x="0.0" y="643.5" stroke="none" data-name="Workspace">azure_client_secret: string</text>
+								<text x="0.0" y="658.5" stroke="none" data-name="Workspace">gcp_project_id: string</text>
+								<text x="0.0" y="673.5" stroke="none" data-name="Workspace">gcp_client_email: string</text>
+								<text x="0.0" y="688.5" stroke="none" data-name="Workspace">gcp_private_key: string</text>
+								<text x="0.0" y="703.5" stroke="none" data-name="Workspace">hashicorp_vault_url: string</text>
+								<text x="0.0" y="718.5" stroke="none" data-name="Workspace">hashicorp_vault_token: string</text>
+								<text x="0.0" y="733.5" stroke="none" data-name="Workspace">hashicorp_vault_namespace: string</text>
+								<text x="0.0" y="748.5" stroke="none" data-name="Workspace">hashicorp_vault_kv_mount: string</text>
+								<text x="0.0" y="763.5" stroke="none" data-name="Workspace">hashicorp_vault_kv_version: string</text>
+								<text x="0.0" y="778.5" stroke="none" data-name="Workspace">grafana_apikey: string</text>
+								<text x="0.0" y="793.5" stroke="none" data-name="Workspace">grafana_site: string</text>
+								<text x="0.0" y="808.5" stroke="none" data-name="Workspace">clickhouse_url: string</text>
+								<text x="0.0" y="823.5" stroke="none" data-name="Workspace">clickhouse_username: string</text>
+								<text x="0.0" y="838.5" stroke="none" data-name="Workspace">clickhouse_password: string</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="WorkspaceIntegration">
+						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
+							<rect x="1171.8" y="2728.5" height="302.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M1171.8 2759.5 L1447.8 2759.5" fill="none" data-name="WorkspaceIntegration"></path>
+						</g>
+						<g transform="translate(1171.75, 2728.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
+								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
+								
+							</g>
+						</g>
+						<g transform="translate(1171.75, 2759.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
+								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">integration_type: string</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">client_id: string</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="WorkspaceIntegration">client_secret: string</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="WorkspaceIntegration">consumer_key: string</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="WorkspaceIntegration">consumer_secret: string</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="WorkspaceIntegration">is_active: boolean</text>
+								<text x="0.0" y="103.5" stroke="none" data-name="WorkspaceIntegration">api_url: string</text>
+								<text x="0.0" y="118.5" stroke="none" data-name="WorkspaceIntegration">authorize_url: string</text>
+								<text x="0.0" y="133.5" stroke="none" data-name="WorkspaceIntegration">token_url: string</text>
+								<text x="0.0" y="148.5" stroke="none" data-name="WorkspaceIntegration">refresh_url: string</text>
+								<text x="0.0" y="163.5" stroke="none" data-name="WorkspaceIntegration">base_url: string</text>
+								<text x="0.0" y="178.5" stroke="none" data-name="WorkspaceIntegration">pem: string</text>
+								<text x="0.0" y="193.5" stroke="none" data-name="WorkspaceIntegration">key: string</text>
+								<text x="0.0" y="208.5" stroke="none" data-name="WorkspaceIntegration">environment: string</text>
+								<text x="0.0" y="223.5" stroke="none" data-name="WorkspaceIntegration">categories: IntegrationCategory[]</text>
+								<text x="0.0" y="238.5" stroke="none" data-name="WorkspaceIntegration">dev_api_key: string</text>
+								<text x="0.0" y="253.5" stroke="none" data-name="WorkspaceIntegration">overriden_scopes: string</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
