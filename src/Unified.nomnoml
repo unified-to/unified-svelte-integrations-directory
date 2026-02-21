@@ -1,0 +1,453 @@
+#background: transparent
+#edges: rounded
+[ApiCall | 
+	id: id
+	created_at: date
+	connection_id: id
+	workspace_id: id
+	integration_type: string
+	external_xref: string
+	name: string
+	path: string
+	size: number
+	status: string
+	error: string
+	ip_address: string
+	type: ApiCallType
+	method: string
+	environment: string
+	webhook_id: id
+	is_billable: boolean
+	user_agent: string
+	unified_response_time: number
+	endapi_response_time: number
+]
+
+[Connection | 
+	id: id
+	created_at: date
+	updated_at: date
+	workspace_id: id
+	integration_type: string
+	integration_name: string
+	external_xref: string
+	permissions: IntegrationPermission\[\]
+	categories: IntegrationCategory\[\]
+	auth: ConnectionAuth
+	is_paused: boolean
+	auth_aws_arn: string
+	environment: string
+	auth_azure_keyvault_id: string
+	auth_gcp_secret_name: string
+	auth_hashi_vault_path: string
+	last_healthy_at: date
+	last_unhealthy_at: date
+]
+
+[ConnectionAuth | 
+	token: string
+	access_token: string
+	refresh_token: string
+	expiry_date: date
+	expires_in: number
+	emails: string\[\]
+	name: string
+	user_id: string
+	app_id: string
+	client_id: string
+	client_secret: string
+	consumer_key: string
+	consumer_secret: string
+	meta: object
+	state: string
+	other_auth_info: string\[\]
+	api_url: string
+	authorize_url: string
+	token_url: string
+	refresh_url: string
+	pem: string
+	key: string
+	refresh_token_expires_in: number
+	refresh_token_expires_date: date
+	dev_api_key: string
+]
+
+[Integration | 
+	type: string
+	created_at: string
+	updated_at: string
+	name: string
+	is_active: boolean
+	categories: IntegrationCategory\[\]
+	api_docs_url: string
+	logo_url: string
+	in_progress: boolean
+	is_hidden: boolean
+	color: string
+	text_color: string
+	fa_icon: string
+	token_names: string\[\]
+	token_instructions: string\[\]
+	web_url: string
+	rate_limit_description: string
+	beta: boolean
+	support: IntegrationSupport
+	tested_at: date
+	sandbox: object
+	partnership: object
+	saml: object
+	description: string
+	api: object
+	featured: boolean
+	popularity: number
+	active_healthy_connections: number
+]
+
+[IntegrationSupport | 
+	methods: boolean
+	inbound_fields: SupportInboundType
+	outbound_fields: SupportOutboundType
+	webhook_events: IntegrationSupportWebhookType\[\]
+	raw_objects: string\[\]
+	slow_fields: string\[\]
+	from_webhook: SupportInboundType
+	list_sort_by_name: SupportInboundType
+	list_sort_by_created_at: SupportInboundType
+	list_sort_by_updated_at: SupportInboundType
+	list_updated_gte: SupportInboundType
+	list_user_id: SupportInboundType
+	list_user_mentioned_id: SupportInboundType
+	list_customer_id: SupportInboundType
+	list_company_id: SupportInboundType
+	list_contact_id: SupportInboundType
+	list_application_id: SupportInboundType
+	list_candidate_id: SupportInboundType
+	list_deal_id: SupportInboundType
+	list_job_id: SupportInboundType
+	list_invoice_id: SupportInboundType
+	list_order: SupportInboundType
+	list_query: SupportInboundType
+	list_limit: SupportInboundType
+	list_offset: SupportInboundType
+	list_root_id: SupportInboundType
+	list_list_id: SupportInboundType
+	list_interview_id: SupportInboundType
+	list_location_id: SupportInboundType
+	list_collection_id: SupportInboundType
+	list_ticket_id: SupportInboundType
+	list_parent_id: SupportInboundType
+	list_account_id: SupportInboundType
+	list_item_id: SupportInboundType
+	list_space_id: SupportInboundType
+	list_channel_id: SupportInboundType
+	list_page_id: SupportInboundType
+	list_type: SupportInboundType
+	list_link_id: SupportInboundType
+	list_project_id: SupportInboundType
+	list_item_variant_id: SupportInboundType
+	list_raw_fields: SupportInboundType
+	list_student_id: SupportInboundType
+	list_class_id: SupportInboundType
+	list_instructor_id: SupportInboundType
+	list_course_id: SupportInboundType
+	list_teacher_id: SupportInboundType
+	list_repo_id: SupportInboundType
+	list_org_id: SupportInboundType
+	list_calendar_id: SupportInboundType
+	list_task_id: SupportInboundType
+	search_twitter: SupportInboundType
+	search_name: SupportInboundType
+	search_linkedinurl: SupportInboundType
+	search_email: SupportInboundType
+	search_domain: SupportInboundType
+	list_event_id: SupportInboundType
+	list_start_gte: SupportInboundType
+	list_end_lt: SupportInboundType
+	list_lead_id: SupportInboundType
+	list_call_id: SupportInboundType
+	list_document_id: SupportInboundType
+	list_payment_id: SupportInboundType
+	list_status: SupportInboundType
+	list_branch_id: SupportInboundType
+	list_pipeline_id: SupportInboundType
+	list_category_id: SupportInboundType
+	list_package_id: SupportInboundType
+	list_expand: SupportInboundType
+	native_webhook_parent_id: SupportInboundType
+	native_webhook_project_id: SupportInboundType
+	native_webhook_company_id: SupportInboundType
+	native_webhook_task_id: SupportInboundType
+	native_webhook_channel_id: SupportInboundType
+	native_webhook_calendar_id: SupportInboundType
+	native_webhook_event_id: SupportInboundType
+	virtual_webhook_updated_gte: SupportInboundType
+	virtual_webhook_limit: SupportInboundType
+	virtual_webhook_channel_id: SupportInboundType
+	virtual_webhook_parent_id: SupportInboundType
+	virtual_webhook_contact_id: SupportInboundType
+	virtual_webhook_deal_id: SupportInboundType
+	virtual_webhook_company_id: SupportInboundType
+	virtual_webhook_user_id: SupportInboundType
+	virtual_webhook_user_mentioned_id: SupportInboundType
+	virtual_webhook_type: SupportInboundType
+	virtual_webhook_ticket_id: SupportInboundType
+	virtual_webhook_expand: SupportInboundType
+	virtual_webhook_status: SupportInboundType
+	virtual_webhook_start_gte: SupportInboundType
+	virtual_webhook_end_lt: SupportInboundType
+	virtual_webhook_task_id: SupportInboundType
+	virtual_webhook_space_id: SupportInboundType
+	virtual_webhook_repo_id: SupportInboundType
+	virtual_webhook_project_id: SupportInboundType
+	virtual_webhook_pipeline_id: SupportInboundType
+	virtual_webhook_page_id: SupportInboundType
+	virtual_webhook_org_id: SupportInboundType
+	virtual_webhook_location_id: SupportInboundType
+	virtual_webhook_list_id: SupportInboundType
+	virtual_webhook_job_id: SupportInboundType
+	virtual_webhook_item_id: SupportInboundType
+	virtual_webhook_fields: SupportInboundType
+	virtual_webhook_event_id: SupportInboundType
+	virtual_webhook_customer_id: SupportInboundType
+	virtual_webhook_collection_id: SupportInboundType
+	virtual_webhook_candidate_id: SupportInboundType
+	virtual_webhook_call_id: SupportInboundType
+	virtual_webhook_branch_id: SupportInboundType
+	virtual_webhook_application_id: SupportInboundType
+	virtual_webhook_item_variant_id: SupportInboundType
+	virtual_webhook_calendar_id: SupportInboundType
+	virtual_webhook_lead_id: SupportInboundType
+	list_payslip_id: SupportInboundType
+	list_benefit_id: SupportInboundType
+	list_saleschannel_id: SupportInboundType
+	virtual_webhook_saleschannel_id: SupportInboundType
+	list_campaign_id: SupportInboundType
+	list_ad_id: SupportInboundType
+	list_group_id: SupportInboundType
+	virtual_webhook_campaign_id: SupportInboundType
+	virtual_webhook_ad_id: SupportInboundType
+	virtual_webhook_group_id: SupportInboundType
+	list_form_id: SupportInboundType
+	virtual_webhook_form_id: SupportInboundType
+	native_webhook_form_id: SupportInboundType
+	list_order_id: SupportInboundType
+	virtual_webhook_order_id: SupportInboundType
+	native_webhook_order_id: SupportInboundType
+	list_carrier_id: SupportInboundType
+	virtual_webhook_carrier_id: SupportInboundType
+	native_webhook_carrier_id: SupportInboundType
+	list_shipment_id: SupportInboundType
+	virtual_webhook_shipment_id: SupportInboundType
+	native_webhook_shipment_id: SupportInboundType
+	list_label_id: SupportInboundType
+	virtual_webhook_label_id: SupportInboundType
+	native_webhook_label_id: SupportInboundType
+	list_member_id: SupportInboundType
+	virtual_webhook_member_id: SupportInboundType
+	native_webhook_member_id: SupportInboundType
+	list_content_id: SupportInboundType
+	virtual_webhook_course_id: SupportInboundType
+	native_webhook_course_id: SupportInboundType
+	virtual_webhook_student_id: SupportInboundType
+	native_webhook_student_id: SupportInboundType
+]
+
+[Invoice | 
+	stripe_id: string
+	created_at: date
+	amount: number
+	connections: number
+	plan: string
+]
+
+[Issue | 
+	id: id
+	created_at: string
+	updated_at: string
+	title: string
+	status: IssueStatus
+	url: string
+	workspace_id: id
+	type: string\[\]
+	resolution_time: number
+	ticket_ref: string
+	size: number
+	importance: number
+]
+
+[Permission | 
+	can_create_org: boolean
+	can_leave_org: boolean
+	can_downgrade: boolean
+	can_invite: boolean
+	can_update_org: boolean
+	can_add_and_remove_admin: boolean
+	can_accept_invite: boolean
+	can_reject_invite: boolean
+	can_pay: boolean
+	can_get_invoices: boolean
+	is_admin: boolean
+]
+
+[Plan | 
+	name: string
+	description: string
+	max_connections: number
+	stripe_product_id: string
+	stripe_price_id: string
+	min_price: number
+	price_per_mille_requests: number
+	custom_oauth: boolean
+	max_requests: number
+	test_stripe_product_id: string
+	test_stripe_price_id: string
+	min_annual_price: number
+	stripe_annual_price_id: string
+	test_stripe_annual_price_id: string
+	stripe_overage_price_id: string
+	test_stripe_overage_price_id: string
+	dedicated_channel: boolean
+]
+
+[User | 
+	id: id
+	created_at: date
+	updated_at: date
+	name: string
+	email: string
+	workspace_id: id
+	workspace_ids: id\[\]
+	environment: string
+	meta: object
+]
+
+[Webhook | 
+	id: id
+	created_at: date
+	updated_at: date
+	workspace_id: id
+	connection_id: id
+	hook_url: string
+	object_type: ObjectType
+	interval: number
+	checked_at: date
+	integration_type: string
+	environment: string
+	event: WebhookEvent
+	runs: string\[\]
+	fields: string
+	webhook_type: IntegrationSupportWebhookType
+	meta: object
+	is_healthy: boolean
+	page_max_limit: number
+	filters: string
+	db_type: WebhookDatabaseType
+	db_url: string
+	db_schema: string
+	db_name_prefix: string
+	is_paused: boolean
+]
+
+[WebhookData | 
+	data: object\[\]
+	webhook: Webhook
+	nonce: string
+	sig: string
+	sig256: string
+	type: WebhookDataType
+	external_xref: string
+]
+
+[Workspace | 
+	id: id
+	created_at: date
+	updated_at: date
+	name: string
+	admin_ids: id\[\]
+	invited_emails: string\[\]
+	pay_user_id: string
+	plan: string
+	stripe_customer: string
+	stripe_subscriptions: string\[\]
+	stripe_prices: string\[\]
+	secret: string
+	integrations: WorkspaceIntegration\[\]
+	ip_addresses: string\[\]
+	aws_region: string
+	aws_key: string
+	aws_secret: string
+	datadog_apikey: string
+	datadog_site: string
+	environments: string\[\]
+	add_ons: string\[\]
+	checklist: object
+	plan_term: PlanTerm
+	stripe_canceling_at: date
+	domain: string
+	event_webhook_url: string
+	event_webhook_events: WorkspaceEventType\[\]
+	custom_auth_domain: string
+	custom_auth_domain_valid: boolean
+	custom_api_domain: string
+	slow_fields_opt_in: boolean
+	notion_verification_token: string
+	favicon_url: string
+	is_baa: boolean
+	saml_integration_type: string
+	saml_idp_url: string
+	saml_idp_entity_id: string
+	saml_pem: string
+	saml_only_login: boolean
+	azure_keyvault_url: string
+	azure_tenant_id: string
+	azure_client_id: string
+	azure_client_secret: string
+	gcp_project_id: string
+	gcp_client_email: string
+	gcp_private_key: string
+	hashicorp_vault_url: string
+	hashicorp_vault_token: string
+	hashicorp_vault_namespace: string
+	hashicorp_vault_kv_mount: string
+	hashicorp_vault_kv_version: string
+	grafana_apikey: string
+	grafana_site: string
+	clickhouse_url: string
+	clickhouse_username: string
+	clickhouse_password: string
+]
+
+[WorkspaceIntegration | 
+	integration_type: string
+	client_id: string
+	client_secret: string
+	consumer_key: string
+	consumer_secret: string
+	is_active: boolean
+	api_url: string
+	authorize_url: string
+	token_url: string
+	refresh_url: string
+	base_url: string
+	pem: string
+	key: string
+	environment: string
+	categories: IntegrationCategory\[\]
+	dev_api_key: string
+	overriden_scopes: string
+]
+
+[ApiCall] -> [Connection]
+[ApiCall] -> [Workspace]
+[ApiCall] -> [Webhook]
+[Connection] -> [Workspace]
+[Connection] - [ConnectionAuth]
+[Integration] - [IntegrationSupport]
+[Issue] -> [Workspace]
+[User] -> [Workspace]
+[User] -> *[Workspace]
+[Webhook] -> [Workspace]
+[Webhook] -> [Integration]
+[WebhookData] - [Webhook]
+[Workspace] -> *[User]
+[Workspace] - *[WorkspaceIntegration]
