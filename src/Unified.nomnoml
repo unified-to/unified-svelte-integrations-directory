@@ -250,6 +250,7 @@
 	native_webhook_course_id: SupportInboundType
 	virtual_webhook_student_id: SupportInboundType
 	native_webhook_student_id: SupportInboundType
+	native_webhook_type: SupportInboundType
 ]
 
 [Invoice | 
@@ -418,6 +419,10 @@
 ]
 
 [WorkspaceIntegration | 
+	id: id
+	created_at: date
+	updated_at: date
+	workspace_id: id
 	integration_type: string
 	client_id: string
 	client_secret: string
@@ -435,6 +440,21 @@
 	categories: IntegrationCategory\[\]
 	dev_api_key: string
 	overriden_scopes: string
+	auth: WorkspaceIntegrationAuth
+	auth_aws_arn: string
+	auth_azure_keyvault_id: string
+	auth_gcp_secret_name: string
+	auth_hashi_vault_path: string
+]
+
+[WorkspaceIntegrationAuth | 
+	client_id: id
+	client_secret: string
+	consumer_key: string
+	consumer_secret: string
+	pem: string
+	key: string
+	dev_api_key: string
 ]
 
 [ApiCall] -> [Connection]
@@ -451,3 +471,5 @@
 [WebhookData] - [Webhook]
 [Workspace] -> *[User]
 [Workspace] - *[WorkspaceIntegration]
+[WorkspaceIntegration] -> [Workspace]
+[WorkspaceIntegration] - [WorkspaceIntegrationAuth]
