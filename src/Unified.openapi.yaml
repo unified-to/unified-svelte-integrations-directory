@@ -973,6 +973,18 @@ components:
           $ref: "#/components/schemas/SupportInboundType"
         native_webhook_type:
           $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_link_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_bill_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_invoice_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        list_bill_id:
+          $ref: "#/components/schemas/SupportInboundType"
+        virtual_webhook_benefit_id:
+          $ref: "#/components/schemas/IntegrationSupport"
+        virtual_webhook_payment_id:
+          $ref: "#/components/schemas/IntegrationSupport"
       required:
 
     Invoice:
