@@ -70,6 +70,7 @@
 	refresh_token_expires_in: number
 	refresh_token_expires_date: date
 	dev_api_key: string
+	audience: string
 ]
 
 [Integration | 
@@ -251,6 +252,12 @@
 	virtual_webhook_student_id: SupportInboundType
 	native_webhook_student_id: SupportInboundType
 	native_webhook_type: SupportInboundType
+	virtual_webhook_link_id: SupportInboundType
+	virtual_webhook_bill_id: SupportInboundType
+	virtual_webhook_invoice_id: SupportInboundType
+	list_bill_id: SupportInboundType
+	virtual_webhook_benefit_id: IntegrationSupport
+	virtual_webhook_payment_id: IntegrationSupport
 ]
 
 [Invoice | 
@@ -463,6 +470,8 @@
 [Connection] -> [Workspace]
 [Connection] - [ConnectionAuth]
 [Integration] - [IntegrationSupport]
+[IntegrationSupport] - [IntegrationSupport]
+[IntegrationSupport] - [IntegrationSupport]
 [Issue] -> [Workspace]
 [User] -> [Workspace]
 [User] -> *[Workspace]
