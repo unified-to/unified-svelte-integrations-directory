@@ -32,6 +32,7 @@ message ConnectionAuth {
 	optional int32 refresh_token_expires_in = 23;
 	optional string refresh_token_expires_date = 24;
 	optional string dev_api_key = 25;
+	optional string audience = 26;
 }
 
 // A connection represents a specific authentication of an integration.
@@ -209,7 +210,8 @@ message IntegrationSupport {
 	optional string virtual_webhook_bill_id = 149;
 	optional string virtual_webhook_invoice_id = 150;
 	optional string list_bill_id = 151;
-	optional string virtual_webhook_benefit_id = 152;
+	optional IntegrationSupport virtual_webhook_benefit_id = 152;
+	optional IntegrationSupport virtual_webhook_payment_id = 153;
 }
 
 // Informational object for supported integrations.
