@@ -1119,6 +1119,7 @@ the private KEY X.509 certificate in Base64 ASCII format
 	refresh_token_expires_in: Int
 	refresh_token_expires_date: DateTime
 	dev_api_key: String
+	audience: String
 }
 
 type ConnectionAuth {
@@ -1156,6 +1157,7 @@ the private KEY X.509 certificate in Base64 ASCII format
 	refresh_token_expires_in: Int
 	refresh_token_expires_date: DateTime
 	dev_api_key: String
+	audience: String
 }
 
 """
@@ -1474,8 +1476,8 @@ objects that we map from in the integration
 	virtual_webhook_bill_id: ENUM_SupportInboundType
 	virtual_webhook_invoice_id: ENUM_SupportInboundType
 	list_bill_id: ENUM_SupportInboundType
-	virtual_webhook_benefit_id: IntegrationSupport_Input
-	virtual_webhook_payment_id: IntegrationSupport_Input
+	virtual_webhook_benefit_id: ENUM_SupportInboundType
+	virtual_webhook_payment_id: ENUM_SupportInboundType
 }
 
 type IntegrationSupport {
@@ -1633,8 +1635,8 @@ objects that we map from in the integration
 	virtual_webhook_bill_id: ENUM_SupportInboundType
 	virtual_webhook_invoice_id: ENUM_SupportInboundType
 	list_bill_id: ENUM_SupportInboundType
-	virtual_webhook_benefit_id: IntegrationSupport
-	virtual_webhook_payment_id: IntegrationSupport
+	virtual_webhook_benefit_id: ENUM_SupportInboundType
+	virtual_webhook_payment_id: ENUM_SupportInboundType
 }
 
 input Invoice_Input {
