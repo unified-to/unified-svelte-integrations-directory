@@ -256,8 +256,8 @@
 	virtual_webhook_bill_id: SupportInboundType
 	virtual_webhook_invoice_id: SupportInboundType
 	list_bill_id: SupportInboundType
-	virtual_webhook_benefit_id: IntegrationSupport
-	virtual_webhook_payment_id: IntegrationSupport
+	virtual_webhook_benefit_id: SupportInboundType
+	virtual_webhook_payment_id: SupportInboundType
 ]
 
 [Invoice | 
@@ -470,8 +470,6 @@
 [Connection] -> [Workspace]
 [Connection] - [ConnectionAuth]
 [Integration] - [IntegrationSupport]
-[IntegrationSupport] - [IntegrationSupport]
-[IntegrationSupport] - [IntegrationSupport]
 [Issue] -> [Workspace]
 [User] -> [Workspace]
 [User] -> *[Workspace]
