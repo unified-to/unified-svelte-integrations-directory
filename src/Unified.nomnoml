@@ -258,6 +258,7 @@
 	list_bill_id: SupportInboundType
 	virtual_webhook_benefit_id: SupportInboundType
 	virtual_webhook_payment_id: SupportInboundType
+	list_fulltext: SupportInboundType
 ]
 
 [Invoice | 
