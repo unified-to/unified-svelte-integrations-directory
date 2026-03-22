@@ -260,6 +260,8 @@
 	virtual_webhook_payment_id: SupportInboundType
 	list_fulltext: SupportInboundType
 	list_io_id: SupportInboundType
+	virtual_webhook_io_id: SupportInboundType
+	native_webhook_io_id: SupportInboundType
 ]
 
 [Invoice | 
