@@ -384,7 +384,6 @@
 	stripe_subscriptions: string\[\]
 	stripe_prices: string\[\]
 	secret: string
-	integrations: WorkspaceIntegration\[\]
 	ip_addresses: string\[\]
 	aws_region: string
 	aws_key: string
@@ -483,6 +482,5 @@
 [Webhook] -> [Integration]
 [WebhookData] - [Webhook]
 [Workspace] -> *[User]
-[Workspace] - *[WorkspaceIntegration]
 [WorkspaceIntegration] -> [Workspace]
 [WorkspaceIntegration] - [WorkspaceIntegrationAuth]
