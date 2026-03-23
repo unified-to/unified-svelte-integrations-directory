@@ -1,4 +1,4 @@
-<svg version="1.1" baseProfile="full" width="2195.5" height="4426.0" viewbox="0 0 2195.5 4426" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<svg version="1.1" baseProfile="full" width="2195.5" height="4441.0" viewbox="0 0 2195.5 4441" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
 	<desc >#background: transparent
 	#edges: rounded
 	[ApiCall | 
@@ -263,6 +263,7 @@
 		list_io_id: SupportInboundType
 		virtual_webhook_io_id: SupportInboundType
 		native_webhook_io_id: SupportInboundType
+		list_size: SupportInboundType
 	]
 	
 	[Invoice | 
@@ -510,7 +511,7 @@
 	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
 		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
 			<g stroke="transparent" fill="transparent">
-				<rect x="0.0" y="0.0" height="4426.0" width="2195.5" stroke="none"></rect>
+				<rect x="0.0" y="0.0" height="4441.0" width="2195.5" stroke="none"></rect>
 			</g>
 			<g transform="translate(8, 8)" fill="#33322E">
 				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
@@ -528,30 +529,30 @@
 					<path d="M1650.4 819.9 L1654.4 827.5 L1660.9 821.9 L1653.1 834.0 Z"></path>
 					<path d="M1181.5 201.4 L1903 367 L1903 590.5 L1903 590.5 L1903 814 L1903 814 L1767.3868777049609 1002.975682251371 L1767.4 1003.0 " fill="none"></path>
 					<path d="M1766.9 994.4 L1767.4 1003.0 L1775.6 1000.7 L1763.5 1008.4 Z"></path>
-					<path d="M938.5 238.0 L695.5 367 L695.5 590.5 L695.5 590.5 L695.5 814 L695.5 814 L695.5 1285 L695.5 1285 L695.5 1756 L695.5 1756 L1386.3444081971277 2880.319923237178 L1386.3 2880.3 " fill="none"></path>
-					<path d="M1378.3 2877.4 L1386.3 2880.3 L1387.4 2871.8 L1389.8 2886.0 Z"></path>
+					<path d="M938.5 238.0 L695.5 367 L695.5 590.5 L695.5 590.5 L695.5 814 L695.5 814 L695.5 1285 L695.5 1285 L695.5 1756 L695.5 1756 L1386.701278690596 2887.810424353745 L1386.7 2887.8 " fill="none"></path>
+					<path d="M1378.7 2884.9 L1386.7 2887.8 L1387.8 2879.3 L1390.2 2893.5 Z"></path>
 					<path d="M1007.8 294.5 L976.5 367 L1105.9491886149992 453.1068263555129 L1105.9 453.1 " fill="none"></path>
 					<path d="M1097.4 453.9 L1105.9 453.1 L1103.4 445.0 L1111.5 456.8 Z"></path>
 					<path d="M938.5 209.7 L410 367 L308.0430732951335 455.15231380478787 L308.0 455.2 " fill="none"></path>
 					<path d="M309.6 446.8 L308.0 455.2 L316.6 454.8 L303.0 459.5 Z"></path>
-					<path d="M1409.1 2886.0 L953.75 1756 L1361.2192141173973 1442.023722127944 L1361.2 1442.0 " fill="none"></path>
+					<path d="M1409.3 2893.5 L953.75 1756 L1361.2192141173973 1442.023722127944 L1361.2 1442.0 " fill="none"></path>
 					<path d="M1359.2 1450.3 L1361.2 1442.0 L1352.7 1441.9 L1366.5 1438.0 Z"></path>
 					<text x="1633.6" y="1756.0" stroke="none">*</text>
-					<path d="M1459.4 2886.0 L1628.25 1756 L1626.4515186262772 1742.6073560944908 L1626.5 1742.6 " fill="none"></path>
+					<path d="M1459.3 2893.5 L1628.25 1756 L1626.4515186262772 1742.6073560944908 L1626.5 1742.6 " fill="none"></path>
 					<path d="M1632.6 1748.5 L1626.5 1742.6 L1622.1 1749.9 L1625.6 1736.0 Z"></path>
 					<path d="M1513.5 661.8 L1943 814 L1767.6727058844974 1032.4633744137611 L1767.7 1032.5 " fill="none"></path>
 					<path d="M1767.7 1023.9 L1767.7 1032.5 L1776.0 1030.6 L1763.5 1037.7 Z"></path>
 					<path d="M1111.5 645.1 L489 814 L489 1044.8333333333333 L489.0 1044.8 " fill="none"></path>
 					<path d="M483.7 1038.2 L489.0 1044.8 L494.3 1038.2 L489.0 1051.5 Z"></path>
 					<path d="M1928.5 225.2 L1639 367 L1513.5 452.90888208269524 L1513.5 452.9 " fill="none"></path>
-					<text x="1387.7" y="2878.0" stroke="none">*</text>
-					<path d="M1366.5 1419.1 L867.75 1756 L1399.8197710068475 2879.974377853566 L1399.8 2880.0 " fill="none"></path>
-					<path d="M1392.1 2876.2 L1399.8 2880.0 L1401.8 2871.7 L1402.7 2886.0 Z"></path>
-					<text x="1715.5" y="2750.5" stroke="none">*</text>
-					<path d="M1663.9 1736.0 L1668.25 1756 L1707.4550573300573 2758.5 L1707.5 2758.5 " fill="none"></path>
-					<path d="M1723.2 2758.5 L1756 1756 L1750.3949062514494 1742.1780148923172 L1750.4 1742.2 " fill="none"></path>
+					<text x="1387.9" y="2885.5" stroke="none">*</text>
+					<path d="M1366.5 1419.1 L867.75 1756 L1400.097011235211 2887.467652772417 L1400.1 2887.5 " fill="none"></path>
+					<path d="M1392.4 2883.7 L1400.1 2887.5 L1402.1 2879.2 L1402.9 2893.5 Z"></path>
+					<text x="1715.5" y="2758.0" stroke="none">*</text>
+					<path d="M1663.9 1736.0 L1668.25 1756 L1707.5072242572242 2766 L1707.5 2766.0 " fill="none"></path>
+					<path d="M1723.1 2766.0 L1756 1756 L1750.3949062514494 1742.1780148923172 L1750.4 1742.2 " fill="none"></path>
 					<path d="M1757.8 1746.4 L1750.4 1742.2 L1748.0 1750.4 L1747.9 1736.0 Z"></path>
-					<path d="M1716.0 3195.5 L1716 4198 L1716 4218 L1716.0 4218.0 " fill="none"></path>
+					<path d="M1716.0 3203.0 L1716 4213 L1716 4233 L1716.0 4233.0 " fill="none"></path>
 					<g data-name="ApiCall">
 						<g fill="#eee8d5" stroke="#33322E" data-name="ApiCall">
 							<rect x="323.5" y="0.0" height="347.0" width="267.0" data-name="ApiCall"></rect>
@@ -714,7 +715,7 @@
 					</g>
 					<g data-name="IntegrationSupport">
 						<g fill="#eee8d5" stroke="#33322E" data-name="IntegrationSupport">
-							<rect x="247.5" y="1776.0" height="2402.0" width="483.0" data-name="IntegrationSupport"></rect>
+							<rect x="247.5" y="1776.0" height="2417.0" width="483.0" data-name="IntegrationSupport"></rect>
 							<path d="M247.5 1807.0 L730.5 1807.0" fill="none" data-name="IntegrationSupport"></path>
 						</g>
 						<g transform="translate(247.5, 1776)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IntegrationSupport">
@@ -882,6 +883,7 @@
 								<text x="0.0" y="2323.5" stroke="none" data-name="IntegrationSupport">list_io_id: SupportInboundType</text>
 								<text x="0.0" y="2338.5" stroke="none" data-name="IntegrationSupport">virtual_webhook_io_id: SupportInboundType</text>
 								<text x="0.0" y="2353.5" stroke="none" data-name="IntegrationSupport">native_webhook_io_id: SupportInboundType</text>
+								<text x="0.0" y="2368.5" stroke="none" data-name="IntegrationSupport">list_size: SupportInboundType</text>
 								
 							</g>
 						</g>
@@ -1031,16 +1033,16 @@
 					</g>
 					<g data-name="User">
 						<g fill="#eee8d5" stroke="#33322E" data-name="User">
-							<rect x="1361.8" y="2886.0" height="182.0" width="168.0" data-name="User"></rect>
-							<path d="M1361.8 2917.0 L1529.8 2917.0" fill="none" data-name="User"></path>
+							<rect x="1361.8" y="2893.5" height="182.0" width="168.0" data-name="User"></rect>
+							<path d="M1361.8 2924.5 L1529.8 2924.5" fill="none" data-name="User"></path>
 						</g>
-						<g transform="translate(1361.75, 2886)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
+						<g transform="translate(1361.75, 2893.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User">
 								<text x="76.0" y="13.5" stroke="none" text-anchor="middle" data-name="User">User</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1361.75, 2917)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
+						<g transform="translate(1361.75, 2924.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="User">
 								<text x="0.0" y="13.5" stroke="none" data-name="User">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="User">created_at: date</text>
@@ -1196,16 +1198,16 @@
 					</g>
 					<g data-name="WorkspaceIntegration">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegration">
-							<rect x="1578.0" y="2758.5" height="437.0" width="276.0" data-name="WorkspaceIntegration"></rect>
-							<path d="M1578.0 2789.5 L1854.0 2789.5" fill="none" data-name="WorkspaceIntegration"></path>
+							<rect x="1578.0" y="2766.0" height="437.0" width="276.0" data-name="WorkspaceIntegration"></rect>
+							<path d="M1578.0 2797.0 L1854.0 2797.0" fill="none" data-name="WorkspaceIntegration"></path>
 						</g>
-						<g transform="translate(1578, 2758.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1578, 2766)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegration">
 								<text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegration">WorkspaceIntegration</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1578, 2789.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
+						<g transform="translate(1578, 2797)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegration">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegration">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegration">id: id</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegration">created_at: date</text>
@@ -1239,16 +1241,16 @@
 					</g>
 					<g data-name="WorkspaceIntegrationAuth">
 						<g fill="#eee8d5" stroke="#33322E" data-name="WorkspaceIntegrationAuth">
-							<rect x="1603.0" y="4218.0" height="152.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
-							<path d="M1603.0 4249.0 L1829.0 4249.0" fill="none" data-name="WorkspaceIntegrationAuth"></path>
+							<rect x="1603.0" y="4233.0" height="152.0" width="226.0" data-name="WorkspaceIntegrationAuth"></rect>
+							<path d="M1603.0 4264.0 L1829.0 4264.0" fill="none" data-name="WorkspaceIntegrationAuth"></path>
 						</g>
-						<g transform="translate(1603, 4218)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(1603, 4233)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WorkspaceIntegrationAuth">
 								<text x="105.0" y="13.5" stroke="none" text-anchor="middle" data-name="WorkspaceIntegrationAuth">WorkspaceIntegrationAuth</text>
 								
 							</g>
 						</g>
-						<g transform="translate(1603, 4249)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
+						<g transform="translate(1603, 4264)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WorkspaceIntegrationAuth">
 							<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WorkspaceIntegrationAuth">
 								<text x="0.0" y="13.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_id: string</text>
 								<text x="0.0" y="28.5" stroke="none" data-name="WorkspaceIntegrationAuth">client_secret: string</text>
