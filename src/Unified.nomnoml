@@ -424,6 +424,8 @@
 	hashicorp_vault_kv_version: string
 	grafana_apikey: string
 	grafana_site: string
+	grafana_username: string
+	grafana_auth_type: string
 	clickhouse_url: string
 	clickhouse_username: string
 	clickhouse_password: string
