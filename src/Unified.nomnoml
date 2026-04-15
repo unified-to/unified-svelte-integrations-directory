@@ -359,6 +359,7 @@
 	db_schema: string
 	db_name_prefix: string
 	is_paused: boolean
+	is_beta: boolean
 ]
 
 [WebhookData | 
@@ -384,10 +385,13 @@
 	stripe_subscriptions: string\[\]
 	stripe_prices: string\[\]
 	secret: string
-	ip_addresses: string\[\]
+	ip_allowlist: WorkspaceIpAllowlistEntry\[\]
+	restrict_ips: boolean
 	aws_region: string
 	aws_key: string
 	aws_secret: string
+	auth_aws_external_id: string
+	auth_aws_arn: string
 	datadog_apikey: string
 	datadog_site: string
 	environments: string\[\]
@@ -471,6 +475,12 @@
 	dev_api_key: string
 ]
 
+[WorkspaceIpAllowlistEntry | 
+	ip_address: string
+	name: string
+	expires_at: date
+]
+
 [ApiCall] -> [Connection]
 [ApiCall] -> [Workspace]
 [ApiCall] -> [Webhook]
@@ -484,5 +494,6 @@
 [Webhook] -> [Integration]
 [WebhookData] - [Webhook]
 [Workspace] -> *[User]
+[Workspace] - *[WorkspaceIpAllowlistEntry]
 [WorkspaceIntegration] -> [Workspace]
 [WorkspaceIntegration] - [WorkspaceIntegrationAuth]
