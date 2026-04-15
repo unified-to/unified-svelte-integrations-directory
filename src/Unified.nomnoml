@@ -263,6 +263,10 @@
 	virtual_webhook_io_id: SupportInboundType
 	native_webhook_io_id: SupportInboundType
 	list_size: SupportInboundType
+	list_template_id: SupportInboundType
+	virtual_webhook_template_id: SupportInboundType
+	native_webhook_template_id: SupportInboundType
+	native_webhook_list_id: SupportInboundType
 ]
 
 [Invoice | 
