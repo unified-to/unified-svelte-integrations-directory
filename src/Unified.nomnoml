@@ -420,6 +420,8 @@
 	saml_idp_entity_id: string
 	saml_pem: string
 	saml_only_login: boolean
+	sync_objects: RegionSyncType\[\]
+	sync_parent_dc: string
 	azure_keyvault_url: string
 	azure_tenant_id: string
 	azure_client_id: string
