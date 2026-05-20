@@ -269,6 +269,7 @@
 	native_webhook_list_id: SupportInboundType
 	list_reference: SupportInboundType
 	virtual_webhook_reference: SupportInboundType
+	virtual_webhook_account_id: SupportInboundType
 ]
 
 [Invoice | 
