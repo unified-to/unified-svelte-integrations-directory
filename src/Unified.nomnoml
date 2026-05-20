@@ -461,6 +461,7 @@
 	token_url: string
 	refresh_url: string
 	base_url: string
+	prompt_region: boolean
 	pem: string
 	key: string
 	environment: string
