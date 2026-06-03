@@ -42,6 +42,8 @@
 	auth_hashi_vault_path: string
 	last_healthy_at: date
 	last_unhealthy_at: date
+	secretsmanager_id: id
+	secretsmanager_key: string
 ]
 
 [ConnectionAuth | 
@@ -329,6 +331,18 @@
 	dedicated_channel: boolean
 ]
 
+[SecretsManager | 
+	id: id
+	created_at: date
+	updated_at: date
+	type: SecretsManagerType
+	name: string
+	workspace_id: id
+	auth: Record<string, string>
+	environments: string\[\]
+	dcs: string\[\]
+]
+
 [User | 
 	id: id
 	created_at: date
@@ -444,6 +458,8 @@
 	clickhouse_password: string
 	auto_join: boolean
 	jwt_secret: string
+	default_secretsmanager_id: id
+	default_secretsmanager_env_ids: id
 ]
 
 [WorkspaceIntegration | 
@@ -474,6 +490,8 @@
 	auth_azure_keyvault_id: string
 	auth_gcp_secret_name: string
 	auth_hashi_vault_path: string
+	secretsmanager_id: id
+	secretsmanager_key: string
 ]
 
 [WorkspaceIntegrationAuth | 
@@ -496,15 +514,20 @@
 [ApiCall] -> [Workspace]
 [ApiCall] -> [Webhook]
 [Connection] -> [Workspace]
+[Connection] -> [SecretsManager]
 [Connection] - [ConnectionAuth]
 [Integration] - [IntegrationSupport]
 [Issue] -> [Workspace]
+[SecretsManager] -> [Workspace]
 [User] -> [Workspace]
 [User] -> *[Workspace]
 [Webhook] -> [Workspace]
 [Webhook] -> [Integration]
 [WebhookData] - [Webhook]
 [Workspace] -> *[User]
+[Workspace] -> [SecretsManager]
+[Workspace] -> [SecretsManager]
 [Workspace] - *[WorkspaceIpAllowlistEntry]
 [WorkspaceIntegration] -> [Workspace]
+[WorkspaceIntegration] -> [SecretsManager]
 [WorkspaceIntegration] - [WorkspaceIntegrationAuth]
