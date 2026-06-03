@@ -338,7 +338,7 @@
 	type: SecretsManagerType
 	name: string
 	workspace_id: id
-	auth: Record<string, string>
+	auth: string
 	environments: string\[\]
 	dcs: string\[\]
 ]
