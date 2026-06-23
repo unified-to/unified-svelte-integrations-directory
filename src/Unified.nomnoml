@@ -1,8 +1,5 @@
 #background: transparent
 #edges: rounded
-[ | 
-]
-
 [ApiCall | 
 	id: id
 	created_at: date
@@ -469,11 +466,8 @@
 	refresh_url: string
 	base_url: string
 	prompt_region: boolean
-	pem: string
-	key: string
 	environment: string
 	categories: IntegrationCategory\[\]
-	dev_api_key: string
 	overriden_scopes: string
 	auth: WorkspaceIntegrationAuth
 	secretsmanager_id: id
