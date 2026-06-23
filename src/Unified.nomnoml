@@ -1,5 +1,8 @@
 #background: transparent
 #edges: rounded
+[ | 
+]
+
 [ApiCall | 
 	id: id
 	created_at: date
@@ -35,11 +38,7 @@
 	categories: IntegrationCategory\[\]
 	auth: ConnectionAuth
 	is_paused: boolean
-	auth_aws_arn: string
 	environment: string
-	auth_azure_keyvault_id: string
-	auth_gcp_secret_name: string
-	auth_hashi_vault_path: string
 	last_healthy_at: date
 	last_unhealthy_at: date
 	secretsmanager_id: id
@@ -345,8 +344,14 @@
 	name: string
 	workspace_id: id
 	auth: string
-	environments: string\[\]
 	dcs: string\[\]
+]
+
+[SecretsManagerInstructions | 
+	type: SecretsManagerType
+	key: string
+	label: string
+	instructions: string
 ]
 
 [User | 
@@ -414,11 +419,6 @@
 	secret: string
 	ip_allowlist: WorkspaceIpAllowlistEntry\[\]
 	restrict_ips: boolean
-	aws_region: string
-	aws_key: string
-	aws_secret: string
-	auth_aws_external_id: string
-	auth_aws_arn: string
 	datadog_apikey: string
 	datadog_site: string
 	environments: string\[\]
@@ -443,18 +443,6 @@
 	saml_only_login: boolean
 	sync_objects: RegionSyncType\[\]
 	sync_parent_dc: string
-	azure_keyvault_url: string
-	azure_tenant_id: string
-	azure_client_id: string
-	azure_client_secret: string
-	gcp_project_id: string
-	gcp_client_email: string
-	gcp_private_key: string
-	hashicorp_vault_url: string
-	hashicorp_vault_token: string
-	hashicorp_vault_namespace: string
-	hashicorp_vault_kv_mount: string
-	hashicorp_vault_kv_version: string
 	grafana_apikey: string
 	grafana_site: string
 	grafana_username: string
@@ -474,10 +462,6 @@
 	updated_at: date
 	workspace_id: id
 	integration_type: string
-	client_id: string
-	client_secret: string
-	consumer_key: string
-	consumer_secret: string
 	is_active: boolean
 	api_url: string
 	authorize_url: string
@@ -492,10 +476,6 @@
 	dev_api_key: string
 	overriden_scopes: string
 	auth: WorkspaceIntegrationAuth
-	auth_aws_arn: string
-	auth_azure_keyvault_id: string
-	auth_gcp_secret_name: string
-	auth_hashi_vault_path: string
 	secretsmanager_id: id
 	secretsmanager_key: string
 ]
