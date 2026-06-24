@@ -363,6 +363,14 @@
 	instructions: string
 ]
 
+[SecretsManagerSecret | 
+	id: id
+	created_at: date
+	updated_at: date
+	name: string
+	description: string
+]
+
 [User | 
 	id: id
 	created_at: date
