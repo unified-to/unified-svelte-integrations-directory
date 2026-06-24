@@ -285,6 +285,7 @@
 	native_webhook_visitor_id: SupportInboundType
 	list_medium: SupportInboundType
 	list_source: SupportInboundType
+	list_dimension: SupportInboundType
 ]
 
 [Invoice | 
@@ -477,6 +478,7 @@
 	refresh_url: string
 	base_url: string
 	prompt_region: boolean
+	auth_type: IntegrationAuthType
 	environment: string
 	categories: IntegrationCategory\[\]
 	overriden_scopes: string
