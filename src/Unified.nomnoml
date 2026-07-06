@@ -486,6 +486,7 @@
 	refresh_url: string
 	base_url: string
 	prompt_region: boolean
+	use_unified_redirect: boolean
 	auth_type: IntegrationAuthType
 	environment: string
 	categories: IntegrationCategory\[\]
