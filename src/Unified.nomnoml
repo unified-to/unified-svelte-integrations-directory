@@ -286,6 +286,7 @@
 	list_medium: SupportInboundType
 	list_source: SupportInboundType
 	list_dimension: SupportInboundType
+	list_goal: SupportInboundType
 ]
 
 [Invoice | 
