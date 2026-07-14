@@ -287,6 +287,7 @@
 	list_source: SupportInboundType
 	list_dimension: SupportInboundType
 	list_goal: SupportInboundType
+	list_role_id: SupportInboundType
 ]
 
 [Invoice | 
