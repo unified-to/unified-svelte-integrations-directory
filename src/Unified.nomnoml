@@ -90,6 +90,7 @@
 	web_url: string
 	rate_limit_description: string
 	beta: boolean
+	requires_cname: boolean
 	support: IntegrationSupport
 	tested_at: date
 	sandbox: object
