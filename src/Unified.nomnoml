@@ -116,6 +116,7 @@
 	list_sort_by_updated_at: SupportInboundType
 	list_updated_gte: SupportInboundType
 	list_user_id: SupportInboundType
+	list_assigned_user_id: SupportInboundType
 	list_user_mentioned_id: SupportInboundType
 	list_customer_id: SupportInboundType
 	list_company_id: SupportInboundType
