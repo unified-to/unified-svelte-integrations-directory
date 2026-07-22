@@ -279,6 +279,7 @@
 	list_property_id: SupportInboundType
 	list_visitor_id: SupportInboundType
 	list_session_id: SupportInboundType
+	list_profile_id: SupportInboundType
 	virtual_webhook_property_id: SupportInboundType
 	native_webhook_property_id: SupportInboundType
 	virtual_webhook_session_id: SupportInboundType
