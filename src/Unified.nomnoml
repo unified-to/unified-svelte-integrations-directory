@@ -512,6 +512,9 @@
 	pem: string
 	key: string
 	dev_api_key: string
+	saml_idp_url: string
+	saml_idp_entity_id: string
+	saml_pem: string
 ]
 
 [WorkspaceIpAllowlistEntry | 
