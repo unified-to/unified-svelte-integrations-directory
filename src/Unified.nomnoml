@@ -297,6 +297,7 @@
 	virtual_webhook_profile_id: SupportInboundType
 	list_segment_id: SupportInboundType
 	list_cycle_id: SupportInboundType
+	virtual_webhook_cycle_id: SupportInboundType
 ]
 
 [Invoice | 
