@@ -38,6 +38,7 @@
 	environment: string
 	last_healthy_at: date
 	last_unhealthy_at: date
+	last_unhealthy_code: string
 	secretsmanager_id: id
 	secretsmanager_key: string
 ]
@@ -294,6 +295,8 @@
 	list_effective_status: SupportInboundType
 	virtual_webhook_assigned_user_id: SupportInboundType
 	virtual_webhook_profile_id: SupportInboundType
+	list_segment_id: SupportInboundType
+	list_cycle_id: SupportInboundType
 ]
 
 [Invoice | 
@@ -317,6 +320,7 @@
 	ticket_ref: string
 	size: number
 	importance: number
+	customer_note: string
 ]
 
 [Permission | 
