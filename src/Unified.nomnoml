@@ -298,6 +298,8 @@
 	list_segment_id: SupportInboundType
 	list_cycle_id: SupportInboundType
 	virtual_webhook_cycle_id: SupportInboundType
+	list_bankfeedaccount_id: SupportInboundType
+	virtual_webhook_bankfeedaccount_id: SupportInboundType
 ]
 
 [Invoice | 
