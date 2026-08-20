@@ -460,6 +460,7 @@
 	stripe_canceling_at: date
 	domain: string
 	event_webhook_url: string
+	event_webhook_env_urls: string
 	event_webhook_events: WorkspaceEventType\[\]
 	custom_auth_domain: string
 	custom_auth_domain_valid: boolean
