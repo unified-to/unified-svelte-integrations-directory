@@ -300,6 +300,8 @@
 	virtual_webhook_cycle_id: SupportInboundType
 	list_bankfeedaccount_id: SupportInboundType
 	virtual_webhook_bankfeedaccount_id: SupportInboundType
+	list_post_id: SupportInboundType
+	virtual_webhook_post_id: SupportInboundType
 ]
 
 [Invoice | 
