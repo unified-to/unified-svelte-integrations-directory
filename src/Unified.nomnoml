@@ -432,7 +432,6 @@
 	data: object\[\]
 	webhook: Webhook
 	nonce: string
-	sig: string
 	sig256: string
 	type: WebhookDataType
 	external_xref: string
@@ -525,6 +524,7 @@
 	saml_idp_url: string
 	saml_idp_entity_id: string
 	saml_pem: string
+	needs_pkce: boolean
 ]
 
 [WorkspaceIpAllowlistEntry | 
