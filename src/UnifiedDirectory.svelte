@@ -1,5 +1,6 @@
 <script lang="ts">
-    import CATEGORIES from './Unified.ts';
+    // Unified.ts has no default export, so the default import was undefined and the component threw on load
+    import { CATEGORIES, type TIntegrationCategory } from './Unified';
     interface IIntegration {
         type: string;
         name: string;
