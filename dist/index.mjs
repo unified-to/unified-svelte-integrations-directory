@@ -11,7 +11,6 @@ const EACH_INDEX_REACTIVE = 1 << 1;
 const EACH_ITEM_IMMUTABLE = 1 << 4;
 
 const PROPS_IS_IMMUTABLE = 1;
-const PROPS_IS_RUNES = 1 << 1;
 const TEMPLATE_USE_IMPORT_NODE = 1 << 1;
 
 const DEV = false;
@@ -129,18 +128,6 @@ function effect_update_depth_exceeded() {
 	{
 		// TODO print a link to the documentation
 		throw new Error("effect_update_depth_exceeded");
-	}
-}
-
-/**
- * Cannot do `bind:%key%={undefined}` when `%key%` has a fallback value
- * @param {string} key
- * @returns {never}
- */
-function props_invalid_value(key) {
-	{
-		// TODO print a link to the documentation
-		throw new Error("props_invalid_value");
 	}
 }
 
@@ -1575,7 +1562,7 @@ function untrack(fn) {
 	}
 }
 
-const STATUS_MASK = ~(DIRTY | MAYBE_DIRTY | CLEAN);
+const STATUS_MASK = -3585;
 
 /**
  * @param {Signal} signal
@@ -2844,37 +2831,15 @@ function with_parent_branch(fn) {
  */
 function prop(props, key, flags, fallback) {
 	var immutable = (flags & PROPS_IS_IMMUTABLE) !== 0;
-	var runes = (flags & PROPS_IS_RUNES) !== 0;
 	var is_store_sub = false;
 	var prop_value;
 
 	{
 		[prop_value, is_store_sub] = capture_store_binding(() => /** @type {V} */ (props[key]));
 	}
-	var setter = get_descriptor(props, key)?.set;
+	get_descriptor(props, key)?.set;
 
 	var fallback_value = /** @type {V} */ (fallback);
-	var fallback_dirty = true;
-
-	var get_fallback = () => {
-		if (fallback_dirty) {
-			fallback_dirty = false;
-			{
-				fallback_value = /** @type {V} */ (fallback);
-			}
-		}
-
-		return fallback_value;
-	};
-
-	if (prop_value === undefined && fallback !== undefined) {
-		if (setter && runes) {
-			props_invalid_value();
-		}
-
-		prop_value = get_fallback();
-		if (setter) setter(prop_value);
-	}
 
 	/** @type {() => V} */
 	var getter;
@@ -2898,6 +2863,50 @@ function prop(props, key, flags, fallback) {
 	}
 }
 
+/*
+Unified
+==============
+*/
+const CATEGORIES = [
+    { category: 'crm', label: 'CRM' },
+    { category: 'martech', label: 'Marketing' },
+    { category: 'uc', label: 'Call Center' },
+    { category: 'enrich', label: 'Enrichment' },
+    { category: 'ats', label: 'ATS' },
+    { category: 'storage', label: 'File Storage' },
+    { category: 'accounting', label: 'Accounting' },
+    { category: 'hris', label: 'HR & Directory' },
+    { category: 'payment', label: 'Payments' },
+    { category: 'commerce', label: 'E-Commerce' },
+    { category: 'genai', label: 'Generative AI' },
+    { category: 'messaging', label: 'Messaging' },
+    { category: 'kms', label: 'Knowledge Management' },
+    { category: 'task', label: 'Tasks' },
+    { category: 'lms', label: 'Learning Management' },
+    { category: 'repo', label: 'Code Repositories' },
+    { category: 'calendar', label: 'Calendar & Meetings' },
+    { category: 'shipping', label: 'Shipping' },
+    { category: 'forms', label: 'Forms' },
+    { category: 'assessment', label: 'Assessments' },
+    { category: 'ads', label: 'Advertising' },
+    { category: 'verification', label: 'Verifications' },
+    { category: 'ticketing', label: 'Ticketing' },
+    { category: 'auth', label: 'Authentication' },
+    { category: 'metadata', label: 'Metadata' },
+    { category: 'passthrough', label: 'Passthrough' },
+    { category: 'signing', label: 'E-Signature' },
+    { category: 'clubs', label: 'Clubs' },
+    { category: 'datastore', label: 'Datastore' },
+    { category: 'analytics', label: 'Analytics' },
+    { category: 'cdp', label: 'Customer Data Platform' },
+    { category: 'saml', label: 'SAML SSO Authentication' },
+    { category: 'performance', label: 'Performance Management' },
+    { category: 'social', label: 'Social Media' },
+    { category: 'legal', label: 'Legal Practice Management' },
+    { category: 'compute', label: 'Compute & Hosting' },
+    { category: 'healthcare', label: 'Healthcare' }
+];
+
 var root_1 = template(`<style>@import url(https://api.unified.to/docs/unified.css);</style>`);
 var root_3 = template(`<button> </button>`);
 var root_2 = template(`<div class="unified_menu"><button>All</button> <!></div>`);
@@ -2909,6 +2918,7 @@ var root = template(`<div class="unified"><!> <!> <div class="unified_vendors"><
 function UnifiedDirectory($$anchor, $$props) {
 	push($$props, false);
 
+	const filterCategories = mutable_state();
 	let workspaceId = prop($$props, "workspaceId", 8);
 	let workspace_id = prop($$props, "workspace_id", 8);
 	let categories = prop($$props, "categories", 8);
@@ -2929,34 +2939,21 @@ function UnifiedDirectory($$anchor, $$props) {
 		us_beta: 'https://api-beta.unified.to',
 		eu: 'https://api-eu.unified.to',
 		eu_beta: 'https://api-eu-beta.unified.to',
+		au: 'https://api-au.unified.to',
 		dev: 'https://api-dev.unified.to'
 	};
 
-	const CATEGORY_MAP = {
-		crm: 'CRM',
-		martech: 'Marketing',
-		ticketing: 'Ticketing',
-		uc: 'Unified Communications',
-		enrich: 'Enrichment',
-		ats: 'ATS',
-		hris: 'HR',
-		accounting: 'Accounting',
-		storage: 'Storage',
-		commerce: 'E-Commerce',
-		payment: 'Payments',
-		genai: 'Generative AI',
-		messaging: 'Messaging',
-		kms: 'KMS',
-		task: 'Tasks',
-		metadata: 'Metadata',
-		lms: 'LMS',
-		repo: 'Repository',
-		calendar: 'Calendar'
-	};
+	const CATEGORY_MAP = CATEGORIES.reduce(
+		(acc, category) => {
+			acc[category.category] = category.label;
+			return acc;
+		},
+		{}
+	);
 
 	const API_URL = MAP_REGION[dc() || 'us'] || MAP_REGION['us'];
 	let INTEGRATIONS = mutable_state([]);
-	let CATEGORIES = mutable_state([]);
+	let ALL_CATEGORIES = mutable_state([]);
 	let selectedCategory = mutable_state('');
 	let loading = mutable_state(false);
 
@@ -2993,7 +2990,7 @@ function UnifiedDirectory($$anchor, $$props) {
 	}
 
 	async function load_data() {
-		const url = `${API_URL}/unified/integration/workspace/${workspaceId() || workspace_id()}?summary=1${categories()?.length ? '&categories=' + categories().join(',') : ''}${environment() === 'Production' || !environment() ? '' : '&env=' + encodeURIComponent(environment())}`;
+		const url = `${API_URL}/unified/integration/workspace/${workspaceId() || workspace_id()}?summary=1${get(filterCategories).length ? '&categories=' + get(filterCategories).join(',') : ''}${environment() === 'Production' || !environment() ? '' : '&env=' + encodeURIComponent(environment())}`;
 
 		try {
 			const response = await fetch(url, {
@@ -3014,9 +3011,23 @@ function UnifiedDirectory($$anchor, $$props) {
 
 	legacy_pre_effect(
 		() => (
+			deep_read_state(categories()),
+			deep_read_state(scopes())
+		),
+		() => {
+			set(filterCategories, categories()?.length
+				? categories()
+				: [
+					...new Set((scopes() || []).map((scope) => scope.split('_')[0]).filter((c) => CATEGORY_MAP[c]))
+				]);
+		}
+	);
+
+	legacy_pre_effect(
+		() => (
 			get(loading),
 			get(INTEGRATIONS),
-			deep_read_state(categories())
+			get(filterCategories)
 		),
 		() => {
 			if (!get(loading) && !get(INTEGRATIONS).length) {
@@ -3030,7 +3041,7 @@ function UnifiedDirectory($$anchor, $$props) {
 
 					data.forEach((integration) => {
 						integration.categories?.forEach((c) => {
-							if (CATEGORY_MAP[c] && (!categories()?.length || categories().indexOf(c) !== -1)) {
+							if (CATEGORY_MAP[c] && (!get(filterCategories).length || get(filterCategories).indexOf(c) !== -1)) {
 								_CATEGORIES.push(c);
 							}
 						});
@@ -3044,7 +3055,7 @@ function UnifiedDirectory($$anchor, $$props) {
 						_CATEGORIES = _CATEGORIES.sort((a, b) => a.localeCompare(b));
 					}
 
-					set(CATEGORIES, _CATEGORIES);
+					set(ALL_CATEGORIES, _CATEGORIES);
 					set(loading, false);
 				});
 			}
@@ -3065,12 +3076,12 @@ function UnifiedDirectory($$anchor, $$props) {
 
 	var node_1 = sibling(node, 2);
 
-	if_block(node_1, () => !notabs() && get(CATEGORIES) && get(CATEGORIES).length > 0 && filter(get(INTEGRATIONS)).length, ($$anchor) => {
+	if_block(node_1, () => !notabs() && get(ALL_CATEGORIES) && get(ALL_CATEGORIES).length > 0 && filter(get(INTEGRATIONS)).length, ($$anchor) => {
 		var div_1 = root_2();
 		var button = child(div_1);
 		var node_2 = sibling(button, 2);
 
-		each(node_2, 1, () => get(CATEGORIES), index, ($$anchor, cat) => {
+		each(node_2, 1, () => get(ALL_CATEGORIES), index, ($$anchor, cat) => {
 			var button_1 = root_3();
 			var text = child(button_1);
 
@@ -3106,7 +3117,7 @@ function UnifiedDirectory($$anchor, $$props) {
 			var fragment = comment();
 			var node_5 = first_child(fragment);
 
-			each(node_5, 1, () => get(integration).categories.filter((c) => !get(CATEGORIES) || get(CATEGORIES).indexOf(c) > -1).filter((c) => CATEGORY_MAP[c]), index, ($$anchor, cat) => {
+			each(node_5, 1, () => get(integration).categories.filter((c) => !get(ALL_CATEGORIES) || get(ALL_CATEGORIES).indexOf(c) > -1).filter((c) => CATEGORY_MAP[c]), index, ($$anchor, cat) => {
 				var div_5 = root_6();
 				var span = child(div_5);
 				var text_2 = child(span);
