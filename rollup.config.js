@@ -1,5 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 export default {
     input: 'src/index.js',
     output: [
@@ -16,8 +17,11 @@ export default {
         resolve({
             browser: true,
             exportConditions: ['svelte'],
-            extensions: ['.svelte'],
+            // .ts for src/Unified.ts, imported by the component
+            extensions: ['.svelte', '.ts', '.mjs', '.js'],
         }),
+        // Rollup cannot parse TypeScript on its own (src/Unified.ts failed the build)
+        typescript({ include: ['src/**/*.ts'], compilerOptions: { target: 'ES2020', module: 'ESNext', moduleResolution: 'bundler', strict: false, noEmitOnError: false } }),
     ],
     external: ['svelte'],
     exports: {
