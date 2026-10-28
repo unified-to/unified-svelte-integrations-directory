@@ -1,5 +1,6 @@
 <script lang="ts">
-    import CATEGORIES from './Unified.ts';
+    // Unified.ts has no default export, so the default import was undefined and the component threw on load
+    import { CATEGORIES, type TIntegrationCategory } from './Unified';
     interface IIntegration {
         type: string;
         name: string;
@@ -41,6 +42,11 @@
     {} as { [path in TIntegrationCategory]: string }
     );
 
+    // `categories` wins; otherwise list only the integrations in the categories of the requested `scopes` (`crm_event_read` is `crm`)
+    $: filterCategories = categories?.length
+        ? categories
+        : [...new Set((scopes || []).map((scope) => scope.split('_')[0]).filter((c) => CATEGORY_MAP[c as keyof typeof CATEGORY_MAP]))];
+
     const API_URL = MAP_REGION[(dc as keyof typeof MAP_REGION) || 'us'] || MAP_REGION['us'];
     let INTEGRATIONS: IIntegration[] = [];
     let ALL_CATEGORIES: string[] = [];
@@ -78,7 +84,7 @@
 
     async function load_data() {
         const url = `${API_URL}/unified/integration/workspace/${workspaceId || workspace_id}?summary=1${
-            categories?.length ? '&categories=' + categories.join(',') : ''
+            filterCategories.length ? '&categories=' + filterCategories.join(',') : ''
         }${environment === 'Production' || !environment ? '' : '&env=' + encodeURIComponent(environment)}`;
 
         try {
@@ -110,7 +116,7 @@
                 let _CATEGORIES = [] as string[];
                 data.forEach((integration) => {
                     integration.categories?.forEach((c) => {
-                        if (CATEGORY_MAP[c] && (!categories?.length || categories.indexOf(c) !== -1)) {
+                        if (CATEGORY_MAP[c] && (!filterCategories.length || filterCategories.indexOf(c) !== -1)) {
                             _CATEGORIES.push(c);
                         }
                     });
