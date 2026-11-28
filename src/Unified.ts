@@ -1478,6 +1478,9 @@ export interface IWorkspace {
 	saml_only_login?: boolean; // if true, only allow SAML login
 	sync_objects?: ( TRegionSyncType )[];
 	sync_parent_dc?: string; // us, eu, au
+	migrate_to_dc?: string; // Region this workspace is migrating to (us, eu, au). While sync_objects is set, region sync replicates only between sync_parent_dc and this region. Without sync_objects it is the region this workspace has moved to.
+	migration_id?: string; // ID of the workspace's current (or last) region migration. Region migration events between the two regions must carry it.
+	migration_claimed_from?: string; // Region this workspace was claimed from in a region migration (us, eu, au). While sync_objects is set, the claim is waiting for that region to confirm; afterwards the old workspace still exists there until it is deleted.
 	grafana_apikey?: string;
 	grafana_site?: string;
 	grafana_username?: string; // Required when `grafana_auth_type` is `basic` (e.g. Grafana Cloud user / instance id)
